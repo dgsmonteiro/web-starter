@@ -19,7 +19,7 @@
         menu : {
           eixo: 'Gestão',
           titulo: 'Home',
-          icone: '#configuracao-boleto'
+          icone: '#worldwide'
         },
         url: '/gestao',
         views: {

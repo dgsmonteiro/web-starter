@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-md-2 text-center" ng-repeat="icn in icone.listaIconesComum">
         <svg aria-hidden="true" class="icone icone-md">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{icn.id}}"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#worldwide"></use>
         </svg>
         <p class="px-3 py-3"><small>{{icn.id}}</small></p>
       </div>
@@ -22,7 +22,7 @@
     <div class="row">
       <div class="col-md-2 text-center" ng-repeat="icn in icone.listaIconesGiss">
         <svg aria-hidden="true" class="icone icone-md icone-header">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{icn.id}}"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#worldwide"></use>
         </svg>
         <p class="px-3 py-3">
           <small>{{icn.id}}</small>

@@ -7,13 +7,13 @@
     title="Eixos"
     type="button">
     <svg aria-hidden="true" class="icone icone-md icone-header">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-eixos"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#worldwide"></use>
     </svg>
   </a>
   <div class="dropdown-menu dropdown-menu-right mb-0 pb-0 mt-0 pt-0 border-0 dropdown-hack">
     <header ng-repeat="eixo in eixos.usuarioLogado.eixos | filter: {ativo: true}" class="dropdown-menu_titulo d-flex align-items-center text-capitalize justify-content-center pt-2 pb-2">
       <svg aria-hidden="true" class="icone icone-padraoPlano icone-md mr-2">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{eixo.icone}}"></use>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#worldwide"></use>
       </svg>
       {{eixo.nome}}
     </header>
@@ -24,7 +24,7 @@
           ng-click="eixos.mudarEixo($index)"
           type="button">
           <svg aria-hidden="true" class="icone icone-padraoPlano icone-lg mr-auto ml-auto">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{eixo.icone}}"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#worldwide"></use>
           </svg>
           {{eixo.nome}}
         </button>

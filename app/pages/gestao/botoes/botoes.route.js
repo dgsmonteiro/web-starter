@@ -18,7 +18,7 @@
         menu : {
           eixo: 'Gestão',
           titulo: 'Botoes',
-          icone: '#configuracao-boleto'
+          icone: '#worldwide'
         },
         url: '/botoes',
         views: {

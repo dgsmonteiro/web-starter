@@ -16,29 +16,24 @@
     this.verificaSessao      = verificaSessao;
 
     function verificaSessao () {
-      //return sessionStorage.getItem('usuarioSessao') ? true : false;
-      return !!sessionStorage.getItem('usuarioSessao');
+      return localStorage.getItem('usuarioSessao') ? true : false;
     }
-
     function dadosDaSessao() {
       //retorna os dados da sessao
-      var sessao = sessionStorage.getItem('usuarioSessao');
+      var sessao = localStorage.getItem('usuarioSessao');
       var dados  = JSON.parse(window.atob(sessao));
       return dados;
     }
-
     function criarSessao(data) {
       //cria a seesao com o token gerado no back end
-      sessionStorage.setItem('usuarioSessao', data);
+      localStorage.setItem('usuarioSessao', data);
     }
-
     function gravarDadosNaSessao() {
       //grava os dados modificados na seesao criptografado
     }
-
     function removerSessao() {
       //destroi a sessao
-      sessionStorage.clear();
+      localStorage.clear();
       $window.location.reload();
       $state.go('root.login');
     }

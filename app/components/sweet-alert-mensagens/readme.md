@@ -35,7 +35,7 @@ SweetAlert
     sweet-on-confirm="vm.anularQualquerCoisa(item)"
     type="button">
     <svg aria-hidden="true" class="icone icone-sm">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lixo"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#worldwide"></use>
       qualquer texto
     </svg>
   </button>

@@ -19,7 +19,7 @@
         menu : {
           eixo: 'Integração',
           titulo: 'Home',
-          icone: '#configuracao-boleto'
+          icone: '#worldwide'
         },
         url: '/integracao',
         views: {

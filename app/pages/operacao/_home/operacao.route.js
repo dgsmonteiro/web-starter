@@ -19,7 +19,7 @@
         menu : {
           eixo: 'Operação',
           titulo: 'Home',
-          icone: '#configuracao-boleto'
+          icone: '#worldwide'
         },
         url: '/operacao',
         views: {

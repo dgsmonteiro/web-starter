@@ -5,21 +5,23 @@
     .module('starter')
     .controller('loginController', loginController);
 
-  loginController.$inject = ['apiLogin', '$state', 'usuarioLogado'];
+  loginController.$inject = ['login', '$state'];
 
-  function loginController(apiLogin, $state, usuarioLogado) {
+  /* @ngInject */
+  function loginController(login, $state) {
     /* jshint validthis: true */
     var vm   = this;
     vm.logar = logar;
 
-    function logar(isValid) {
-      if(isValid){
-        apiLogin.logar(vm).then(function(data) {
-          usuarioLogado.criarUsuarioLogado(sessionStorage.getItem('usuarioSessao'));
-        });
-        $state.go('root.gestao');
+    ////////////////
 
+    function logar (data) {
+      if(data.$valid) {
+        if (login.logar(vm)) {
+          $state.go('root.operacao');
+        }
       }
+
     }
   }
 })();

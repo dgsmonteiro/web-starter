@@ -87,7 +87,7 @@ gulp.watch(files, ['buildDev']);
 function serve () {
 var options = {
   livereload: true
-  ,port: 8080
+  ,port: 8090
   ,open: true
 };
 
@@ -97,7 +97,7 @@ gulp.src("./dist")
 
 function build () {
 return runSequence ("limpaBuild","copiaImagens", "copiaIndex", "geraCss", "concatenaJs", "jsHint", "geraSvgSprite", "insereSvgSprite", "insereCssJs", "copiaPaginasHtml", "excluiArquivosTemporarios")
- 
+
 }
 
 function buildDev () {

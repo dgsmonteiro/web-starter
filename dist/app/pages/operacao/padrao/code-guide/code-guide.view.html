@@ -1,0 +1,587 @@
+<breadcrumb></breadcrumb><div class="titlePage mb-4"><h1 class="mb-2">Guia de Código Front End</h1><h2>Padroes para desenvolver código HTML, JS e CSS flexíveis, duráveis e sustentáveis.</h2></div><div class="modal-content"><h3 class="m-4">Índice</h3></div><div id="Menu"><div class="row"><div class="col-12 col-xs-6 col-md-3" ng-repeat=" topico in operacaoPadraoCodeGuide.topicosController"><div class="boxLinkPrincipal d-flex justify-content-between align-items-center"><div class="text-center w-100"><p class="boxLinkPrincipal_nome w-100">{{topico.nome}}</p><p class="linkIndicativos">{{topico.descricao}}</p></div></div></div></div><div class="row"><div class="col-xs-6 col-sm-3"><ul class="list-group ml-4 mb-4"><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'html-syntax'})">Sintaxe</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'html-style-script'})">Inserindo CSS e JavaScript</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'html-practicality'})">Praticidade em vez de pureza</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'html-attribute-order'})">Ordem dos Atributos</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'html-boolean-attributes'})">Atributos booleanos</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'html-reducing-markup'})">Reduzindo o markup</a></li></ul></div><div class="col-xs-6 col-sm-3"><ul class="list-group ml-4 mb-4"><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'css-syntax'})">Sintaxe do CSS</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'css-declaration-order'})">Ordem das declarações</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'css-media-queries'})">Onde colocar as Media Queries</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'css-prefixed-properties'})">Propriedades com prefixo</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'css-single-declarations'})">Declarações únicas</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'css-shorthand'})">Propriedades resumidas</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'css-nesting'})">Aninhamento (nesting) no SASS</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'css-comments'})">Comentários</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'css-class-names'})">Nomes de classes</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'css-selectors'})">Seletores</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'css-organization'})">Organização</a></li></ul></div><div class="col-xs-6 col-sm-3"><ul class="list-group ml-4 mb-4"><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'js-angular'})">AngularJS</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'js-regras-gerais'})">Regras Gerais</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'js-modulos'})">Módulos</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'js-controller'})">Controller</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'js-services'})">Services</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'js-factory'})">Factory</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'js-data-services'})">Data Services</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'js-directives'})">Directives</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'js-components'})">Componentes</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'js-injecao-de-dependencias'})">Injeção de Dependências</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'js-packages'})">Packages</a></li></ul></div><div class="col-xs-6 col-sm-3"><h6><a ui-sref="root.operacao.padrao.code-guide({'#': 'acessibilidade'})">Acessibilidade</a></h6><ul class="list-group ml-4 mb-4"><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'verify-points'})">Pontos de verificação para a Acessibilidade</a></li></ul><h6><a ui-sref="root.operacao.padrao.code-guide({'#': 'formularios'})">Formulários</a></h6><ul class="list-group ml-4 mb-4"><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'forms-validation'})">Validação</a></li><li><a ui-sref="root.operacao.padrao.code-guide({'#': 'forms-autocomplete'})">Autocompletar</a></li></ul><h6><a ui-sref="root.operacao.padrao.code-guide({'#': 'grid'})">Eicon Grid</a></h6></div></div></div><div><div class="modal-content p-4"><div class="row align-items-center"><div class="col-sm-3"><h3>Regra de Ouro</h3></div><div class="col-sm-9"><p>Toda linha de código deve parecer que foi escrita por uma única pessoa,<br>não importa a quantidade de contribuidores.</p></div></div></div><div class="" id="html"><h3 class="my-4">HTML</h3></div><div class="section" id="html-syntax"><h3 class="mb-2">Sintaxe do HTML</h3><ul class="list-group ml-4 mb-4"><li>Use soft-tabs com dois espaços. (conforme <a href="http://editorconfig.org/">editorConfig</a>)</li><li>Elementos aninhados devem estar identados uma vez (2 espaços).</li><li>Sempre use aspas duplas, nunca aspas simples.</li><li>Nunca inclua uma barra invertida nos elementos viúvos (exemplo: <code>&lt;img&gt;</code> ou <code>&lt;hr&gt;</code>).</li><li>Sempre que a quantidade de atributos em uma tag for maior que 4, estes devem ser identados e organizados em ordem alfabetica.</li></ul></div><h1 class="mb-4" id="#html-style-script">Inserindo CSS e JavaScript</h1><div class="row"><div class="col-12 col-md-6"><p>De acordo com as especificações do HTML5, não há necessidade de especificar um atributo <code>type</code> quando incluímos arquivos de CSS e JavaScript como <code>text/css</code> e <code>text/javascript</code>.</p><h4 class="my-4">Links para especificação do HTML5</h4><ul class="list-group ml-4 mb-4"><li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element" target="_blank">Usando link</a></li><li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-style-element" target="_blank">Usando style</a></li><li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/scripting-1.html#the-script-element" target="_blank">Usando scripts</a></li></ul></div><div class="col-12 col-md-6"><div class="modal-content bg-light"><code class="language-html" data-lang="html"><span class="c">&lt;!-- CSS Externo --&gt;</span><br><span class="nt">&lt;link</span> <span class="na">rel=</span> <span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;code-guide.css&quot;</span> <span class="nt">&gt;</span><br><br><span class="c">&lt;!-- CSS no HTML --&gt;</span><br><span class="nt">&lt;style&gt;</span> <span class="c">/* ... */</span> <span class="nt">&lt;/style&gt;</span><br><br><span class="c">&lt;!-- JavaScript --&gt;</span><br><span class="nt">&lt;script </span><span class="na">src=</span> <span class="s">&quot;code-guide.js&quot;</span> <span class="nt">&gt;&lt;/script&gt;</span></code></div></div></div><div class="section mb-4" id="html-practicality"><h3 class="mb-2">Prática ou pureza?</h3><p class="">Esforce-se para manter o padrão e a semântica do HTML, mas não às custas da praticidade. Use o mínimo de código com a menor complexidade possível.</p></div><!--
+      Parei correção nessa parte
+      Ass: Carlos Augusto
+   --><div class="container-fluid" id="html-attribute-order"><h1>Ordem dos atributos</h1><br><div class="row"><div class="col-lg-6"><div class="col"><p>Atributos HTML devem usar ordem alfabetica para facilitar a leitura do código.</p><ul><li><code>alt</code></li><li><code>aria-*</code></li><li><code>class</code></li><li><code>data-*</code></li><li><code>for</code></li><li><code>href</code></li><li><code>id</code></li><li><code>role</code></li><li><code>src</code></li><li><code>title</code></li><li><code>type</code></li></ul></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;...&quot;</span> <span class="na">data-modal=</span><span class="s">&quot;toggle&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">id=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+  Example link
+<span class="nt">&lt;/a&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">&quot;...&quot;</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span></code></pre></div></div></div></div></div><div class="container-fluid" id="html-boolean-attributes"><h1>Atributos booleanos</h1><br><div class="row"><div class="col-lg-6"><div class="col"><div class="col"><p>Um atributo boleano é o único que não precisa ter valores declarados. O XHTML precisa que você declare um valor, mas no HTML5 isso não é necessário.</p><p>Para uma leitura adicional, consulte a <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes">seção do WhatWG sobre atributos booleanos</a>:</p></div></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">checked</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;select&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">selected</span><span class="nt">&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span></code></pre></div></div></div></div></div><div class="container-fluid" id="html-reducing-markup"><h1>Reduzindo o markup</h1><br><div class="row"><div class="col-lg-6"><div class="col"><p>Sempre que possível, evite elementos pais supérfluos quando escrever HTML. Muitas vezes é necessário uma interação ou refatoração, mas isso produz pouco HTML.</p></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Não tão bom --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;avatar&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/span&gt;</span>
+
+<span class="c">&lt;!-- Melhor --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">&quot;avatar&quot;</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span></code></pre></div></div></div></div></div></div><div><div class="modal-header" id="css"><h3>CSS</h3></div><div class="container-fluid"><h1>Sintaxe do CSS</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>Use soft-tabs com dois espaços. (conforme <a href="http://editorconfig.org/" target="_blank">editorConfig</a>)</li><li>Quando agrupar seletores, deixe seletores individuais em uma linha.</li><li>Inclua um espaço antes de abrir uma chave.</li><li>Coloque o fechamento da chave em uma nova linha.</li><li>Inclua um espaço depois dos dois pontos <code>:</code> em cada declaração de propriedade.</li><li>Cada declaração deve estar em sua própria linha para encontrarmos melhor os erros.</li><li>Feche todas as declarações com ponto-vírgula <code>;</code>.</li><li>Valores separados por vírgula devem incluir um espaço logo depois da vírgula (ex., <code>box-shadow</code>).</li><li>Não inclua espaços depois das vírgulas <em>como em</em> cores <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code> ou <code>rect()</code>. Isto ajuda a diferenciar múltiplos valores (vírgulas, sem espaço) de cores de propriedades múltiplas (vírgulas, com espaço). Também não coloque valores iniciados com zero (ex., <code>.5</code> em vez de <code>0.5</code>).</li><li>Deixe todos os valores hexadecimais em caixa baixa, exemplo: <code>#fff</code>.</li><li>Valores separados por vírgula devem incluir um espaço logo depois da vírgula.</li><li>Não inclua espaços depois das vírgulas <em>como em</em> cores <code>rgb()</code> ou <code>rgba()</code> e não inicie valores com zero.</li><li>Deixe todos os valores hexadecimais em caixa baixa, exemplo: <code>#fff</code>.</li><li>Use cores em hexadecimal abrevidas quando puder, exemplo: <code>#fff</code> em vez de <code>#ffffff</code>.</li><li>Coloque aspas duplas nos valores em seletores com atributos, exemplo: <code>input[type="text"]</code>.</li><li>Evite especificar unidades quando os valores forem 0, exemplo: <code>margin: 0;</code> em vez de <code>margin: 0px;</code>.</li></ul><p>Dúvidas sobre os termos usados aqui? Veja a <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax" target="_blank">seção de sintaxe dos CSS</a> na Wikipedia.</p></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css"><span class="c">/* CSS Ruim */</span>
+<span class="nc">.selector</span><span class="o">,</span> <span class="nc">.selector-secondary</span><span class="o">,</span> <span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">text</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span><span class="m">15px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span><span class="m">0px</span> <span class="m">0px</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="p">);</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span><span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#CCC</span><span class="o">,</span><span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#FFFFFF</span>
+<span class="p">}</span>
+
+<span class="c">/* CSS Bom */</span>
+<span class="nc">.selector</span><span class="o">,</span>
+<span class="nc">.selector-secondary</span><span class="o">,</span>
+<span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,.</span><span class="m">5</span><span class="p">);</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#ccc</span><span class="o">,</span> <span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div></div></div></div></div><div class="container-fluid"><h1>Ordem das declarações</h1><br><div class="row"><div class="col-lg-6"><div class="col"><p>Declarações de propriedades devem ser em ordem alfabética.</p></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css"><span class="nc">.declaration-order</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#f5f5f5</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#e5e5e5</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+  <span class="k">bottom</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#333</span><span class="p">;</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+  <span class="k">font</span><span class="o">:</span> <span class="k">normal</span> <span class="m">13px</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="p">;</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="k">right</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">z-index</span><span class="o">:</span> <span class="m">100</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div></div></div></div></div><div class="container-fluid"><h1>Onde colocar as Media Queries</h1><br><div class="row"><div class="col-lg-6"><div class="col"><p>Coloque as Media Queries o mais perto possível de suas regras originais. Não as coloque separadas em outros arquivos ou no final do documento. Se você fizer isso, outros poderão não encontrá-las no futuro. Veja um exemplo típico:</p></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css">
+<span class="nc">.block</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.block-modifier</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.block_element</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.block_element-modifier</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">480px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nc">.block</span> <span class="p">{</span> <span class="o">...</span><span class="p">}</span>
+  <span class="nc">.block_element</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+  <span class="nc">.block-modifier</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></div></div></div></div></div><div class="container-fluid"><h1>Propriedades com prefixo</h1><br><div class="row"><div class="col-lg-6"><div class="col"><p>Quando usar prefixos de browsers, idente cada propriedade alinhada verticalmente para facilitar a edição multi-linha.</p></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css"><span class="c">/* Propriedades com Prefixo */</span>
+<span class="nc">.selector</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,.</span><span class="m">15</span><span class="p">);</span>
+          <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,.</span><span class="m">15</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div></div></div></div></div><div class="container-fluid"><h1>Declarações únicas</h1><br><div class="row"><div class="col-lg-6"><div class="col"><p>Em lugares onde são definidas apenas uma linha de propriedade, considere remover as quebras de linha para melhorar a leitura e edição. Considere este exemplo:</p></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css"><span class="c">/* Declarações únicas em uma linha */</span>
+<span class="nc">.span1</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">60px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.span2</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">140px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.span3</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">220px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c">/* Várias declarações, uma por linha */</span>
+<span class="nc">.sprite</span> <span class="p">{</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(../img/sprite.png)</span><span class="p">;</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.icon</span>           <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.icon-home</span>     <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-20px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.icon-account</span>  <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-40px</span><span class="p">;</span> <span class="p">}</span></code></pre></div></div></div></div></div><div class="container-fluid"><h1>Aninhamento (nesting) no SASS</h1><br><div class="row"><div class="col-lg-6"><div class="col"><p>Evite aninhar seletores (fazer "nesting"). Só porque você pode fazer isso, não significa que você deve fazê-lo sempre. Considere aninhar se você tem um escopo de estilos para um pai e se há múltiplos elementos para serem aninhados.</p><p>Se você optar por aninhar os seletores somente o faça até o segundo nível</p></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Sem nesting</span>
+<span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="o">&gt;</span> <span class="nt">th</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+<span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="o">&gt;</span> <span class="nt">td</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+
+<span class="c1">// Com nesting</span>
+<span class="nc">.table</span> <span class="p">{</span>
+  <span class="o">&gt;</span> <span class="nt">th</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+  <span class="o">&gt;</span> <span class="nt">td</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></div></div></div></div></div><div class="container-fluid"><h1>Comentários</h1><br><div class="row"><div class="col-lg-6"><div class="col"><p>Código é escrito e mantido por pessoas. Certifique-se de que o código é descritivo, bem comentado e amigável para os outros. Grandes pedaços de comentários devem ter contexto e não devem apenas reiterar um nome de classe ou componente.</p><p>Certifique-se de escrever em sentenças completas ou grandes comentários e frases sucintas para notas gerais.</p></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css"><span class="c">/* Exemplo Ruim */</span>
+<span class="c">/* Cabeçalho da Modal */</span>
+<span class="nc">.modal-header</span> <span class="p">{</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="c">/* Exemplo Bom */</span>
+<span class="c">/* Elemento de empacotamento para .modal-title e .modal-close */</span>
+<span class="nc">.modal-header</span> <span class="p">{</span>
+  <span class="o">...</span>
+<span class="p">}</span></code></pre></div></div></div></div></div><div class="container-fluid"><h1>Nomes de classes</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>Utilize camelCase.</li><li>Evite usar arbitrariamente notações abreviadas.</li><li>Mantenha-as pequenas e sucintas ao máximo possível.</li><li>Use nomes com significado; use nomes ligados à estrutura(topo, rodape, bloco, linha) em vez do visual(azul, verde, amarelo).</li></ul></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css"><span class="c">/* Exemplo Ruim */</span>
+<span class="nc">.t</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.red</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.header</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="c">/* Exemplo Bom */</span>
+<span class="nc">.tweet</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.important</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.tweet-header</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></div></div></div></div></div><div class="container-fluid"><h1>Seletores</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>A abordagem BEM garante que todos os que participam do desenvolvimento de um site trabalhem com uma única base de código e falam o mesmo idioma. Usar uma nomeação adequada irá prepará-lo para as mudanças no design do site.</li><li>A sigla BEM significa block, element, modifier e segue essas propriedades para definir uma nova metodologia de criação de nomes para classes de folhas de estilo.</li><li>O bloco é o recipiente ou contexto em que o elemento se encontra.</li><li>O elemento é parte do bloco. O bloco é o todo e os elementos são suas partes.</li><li>Quando precisarmos modificar um bloco ou elemento utilizamos os modificadores</li><li>Use classes em vez de nomes de tags. Não utilize id's</li><li>Mantenha os seletores pequenos e limite o número de elementos em no máximo dois.</li></ul></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css">
+      <span class="c">/* Bloco */</span>
+      <span class="nc">.nomeDoBlock</span> <span class="p">{</span> <span class="o"> color: #042;</span> <span class="p">}</span>
+      <span class="c">/* Elemento */</span>
+      <span class="nc">.nomeDoBloco_nomeDoElemento</span> <span class="p">{</span> <span class="o"> color: #042;</span> <span class="p">}</span>
+      <span class="c">/* Modificador */</span>
+      <span class="nc">.nomeDoBloco-nomeDoModificador</span> <span class="p">{</span> <span class="o"> </span> <span class="p">}</span>
+      </code></pre></div></div></div></div></div><div class="container-fluid"><h1>Organização</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>Organize seções do código por componentes.</li><li>Desenvolva uma hierarquia de comentários consistente.</li><li>Se usar múltiplos arquivos CSS, quebre-os em componentes.</li></ul></div></div></div></div><div class="container-fluid"><h1>Preferências de editor</h1><br><div class="row"><div class="col-lg-6"><div class="col"><p>Defina seu editor com as seguintes configurações para evitar inconsistências comuns no código e diffs sujos:</p><ul><li>Use soft-tabs com 2 espaços</li><li>Apague os espaços em brancos ao salvar</li><li>Defina o encoding como UTF-8</li><li>Coloque uma nova linha no final dos arquivos</li></ul><p>Considere documentar e aplicar estas configurações para o seu projeto com o <code>.editorconfig</code>. Para um exemplo, veja <a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">o arquivo utilizado no Bootstrap</a>. Aprenda mais em <a href="http://editorconfig.org">EditorConfig</a></p></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css">
+      <span class="c">/* Bloco */</span>
+      <span class="nc">.block</span> <span class="p">{</span> <span class="o"> color: #042;</span> <span class="p">}</span>
+      <span class="c">/* Elemento */</span>
+      <span class="nc">.block_elem</span> <span class="p">{</span> <span class="o"> color: #042;</span> <span class="p">}</span>
+      <span class="c">/* Modificador */</span>
+      <span class="nc">.block-hidden</span> <span class="p">{</span> <span class="o"> </span> <span class="p">}</span>
+      </code></pre></div></div></div></div></div></div><div><div class="modal-header" id="angular"><h3>Angular</h3></div><div class="container-fluid"><h1>Regras Gerais</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>Defina 1 componente por arquivo onde contenha menos de 400 linhas de código.</li><li>Envolva os componentes Angular em uma Immediately Invoked Function Expression (IIFE - Expressão de função imediatamente invocada)</li><li>Use funções nomeadas ao invés de passar uma função anônima como um callback. Isso produz um código mais legível, é muito fácil de debugar, e reduz a quantidade de callbacks aninhados no código</li><li>Use nomes consistentes para todos os componentes seguindo um padrão que descreva a funcionalidade do componente e (opcionalmente) seu tipo. Meu padrão recomendado é <code>característica.tipo.js</code>. Existem dois nomes para a maioria dos componentes: o nome do arquivo (<code>avengers.controllers.js</code>), o nome de componente registrado pelo Angular (<code>AvengersController</code>)</li></ul></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css">
+      <span class="c">/* Exemplo de Código */</span>
+      (<span class="s">function</span> () {
+        angular
+          .<span class="na">module</span>("app")
+          .<span class="na">controller</span>("NomeDoController", NomeDoController);
+
+          <span class="c">/* Função Nomeada */</span>
+          <span class="s">function</span> <span class="na">NomeDoController</span> () {}
+      })();
+      </code></pre></div></div></div></div></div><div class="container-fluid"><h1>Módulos</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>Um módulo deve ser criado somente uma vez, então recupere-o deste ponto em diante.</li><li>Ao usar um módulo, evite usar uma variável. Em vez disso, use encadeamento com a sintaxe <i>getter</i>. Isso produz um código mais legível e evita colisão de variáveis ou vazamentos.</li></ul></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css">
+      <span class="c">/* Definição de um módulo */</span>
+      angular.<span class="na">module</span>("app", []);
+
+      <span class="c">/* Recuperção de um módulo */</span>
+      angular.<span class="na">module</span>("app");
+      </code></pre></div></div></div></div></div><div class="container-fluid"><h1>Controller</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li><strong>Nas Views</strong> utilize a sintaxe <code>controllerAs</code> ao invés da sintaxe <code>clássica controller com $scope</code>. Controllers são construídos, "iniciados", e fornecem um nova instância única. Isso promove o uso do binding de um objeto "pontuado", ou seja, com propriedades na View (ex. <code>customer.name</code> ao invés de <code>name</code>), que é mais contextual, legível, e evita qualquer problema com referências que podem ocorrer sem a "pontuação". Além de ajuda a evitar o uso de chamadas ao <code>$parent</code> nas Views com controllers aninhados.</li><li><strong>Nos Controllers</strong> utilize uma variável de captura para o <code>this</code> quando usar a sintaxe <code>controllerAs</code>. Escolha um nome de variável consistente como vm, que representa o ViewModel.</li><li>Coloque os objetos que precisam de bind no início do controller, em ordem alfabética, e não espalhados através do código do controller. Colocar os objetos que precisam de bind no início torna mais fácil de ler e te ajuda a instantaneamente identificar quais objetos do controller podem ser utilizados na View. Setar funções anônimas pode ser fácil, mas quando essas funções possuem mais de 1 linha do código elas podem dificultar a legibilidade. Definir as funções abaixo dos objetos que necessitam de bind (as funções serão elevadas pelo JavaScript Hoisting) move os detalhes de implementação para o final do controller, mantém os objetos que necessitam de bind no topo, e deixa o código mais fácil de se ler.</li><li>Remova a lógica do controller delegando ela a services e factories. A lógica pode ser reutilizada em múltiplos controllers quando colocada em um service e exposta através de uma função. Remove as dependências e esconde os detalhes de implementação do controlador.</li></ul></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css">
+      <span class="c">/* ControllerAs nas views */</span>
+      <span class="nt">&lt;div <span class="na">ng-controller=</span><span class="s">"Usuario as usuario"</span>&gt;</span>
+        {{usuario.nome}}
+      <span class="nt">&lt;/div&gt;</span>
+
+      <span class="c">/* ControllerAs nos controllers */</span>
+      <span class="s">function</span> <span class="na">NomeDoController</span> () {
+        <span class="s">var</span> vm <span class="s">  =</span> <span class="nt">this</span>;
+        vm.<span class="na">nome</span> <span class="s"> =</span> {};
+        vm.<span class="na">texto</span> <span class="s">=</span> "um texto qualquer";
+      }
+
+      <span class="c">/* Bind */</span>
+      <span class="s">function</span> <span class="na">NomeDoController</span> () {
+        <span class="s">var</span> vm            <span class="s">=</span> <span class="nt">this</span>;
+        vm.<span class="na">enviarMensagem</span> <span class="s">=</span> enviarMensagem;
+        vm.<span class="na">nome</span>           <span class="s">=</span> {};
+
+        ativar();
+
+        <span class="s">function</span> <span class="na">enviarMensagem</span> () { ... }
+        <span class="s">function</span> <span class="na">ativar</span> () { ... }
+      }
+
+      <span class="c">/* Delegue a lógica à services ou factories */</span>
+      <span class="s">function</span> <span class="na">NomeDoController</span> (logicaService) {
+        <span class="s">var</span> vm            <span class="s">=</span> <span class="nt">this</span>;
+        vm.<span class="na">enviarMensagem</span> <span class="s">=</span> enviarMensagem;
+        vm.<span class="na">nome</span>           <span class="s">=</span> {};
+
+        ativar();
+
+        <span class="s">function</span> <span class="na">enviarMensagem</span> () {
+          <span class="s">return</span> logicaService.logica();
+        }
+        <span class="s">function</span> <span class="na">ativar</span> () { ... }
+      }
+      </code></pre></div></div></div></div></div><div class="container-fluid"><h1>Services</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>Services são instanciados com a palavra-chave <code>new</code>, use <code>this</code> para métodos públicos e variáveis. Services são bastante similares a factories, use um factory para consistência. <a href="https://docs.angularjs.org/guide/services">Todos services em Angular são singletons</a>. Isso significa que há apenas uma instância do serviço para cada injetor.</li></ul></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css">
+      <span class="c">/* Exemplo de Service */</span>
+      (<span class="s">function</span> () {
+        angular
+          .<span class="na">module</span>("app")
+          .<span class="na">service</span>("NomeDoService", NomeDoService);
+
+          <span class="s">function</span> <span class="na">NomeDoService</span> () {
+            <span class="s">this</span>.<span class="na">nomeDaFuncao</span> = nomeDaFuncao;
+
+            <span class="c">/* Função Nomeada */</span>
+            <span class="s">function</span> <span class="na">nomeDaFuncao</span> () {}
+          }
+      })();
+
+
+      </code></pre></div></div></div></div></div><div class="container-fluid"><h1>Factory</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>Factories são singletons e retornam um objeto que contém os membros do serviço. Factories devem ter responsabilidade única, que é encapsulado pelo seu contexto. Assim que uma factory começa a exceder a proposta de singularidade, uma nova factory deve ser criada</li><li>Exponha os membros que podem ser invocados no serviço (a interface) no topo. Colocando no topo os membros que podem ser invocados da factory, a leitura torna-se mais fácil e ajuda a identificar imediatamente quais membros da factory podem ser invocados e testados através de teste unitário (e/ou mock). É especialmente útil quando o arquivo torna-se muito longo e ajuda a evitar a necessidade de rolagem para ver o que é exposto. Definir as funções conforme você escreve o código pode ser fácil, mas quando essas funções tem mais que 1 linha de código, elas podem reduzir a leitura e causar rolagem. Definir a interface no topo do que pode ser invocado da factory, torna a leitura mais fácil e mantém os detalhes de implementação mais abaixo.</li></ul></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css">
+      <span class="c">/* Exemplo de Factory */</span>
+      (<span class="s">function</span> () {
+        angular
+          .<span class="na">module</span>("app")
+          .<span class="na">factory</span>("NomeDoService", NomeDoService);
+
+          <span class="s">function</span> <span class="na">NomeDoService</span> () {
+
+            <span class="s">return</span> {
+              <span class="na">nomeDaFuncao</span>: nomeDaFuncao;
+            }
+
+            <span class="c">/* Função Nomeada */</span>
+            <span class="s">function</span> <span class="na">nomeDaFuncao</span> () {}
+          }
+      })();
+      </code></pre></div></div></div></div></div><div class="container-fluid"><h1>Data Services</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>A lógica de refatoração (refactor) para operações com dados e interação com dados na factory. Faça serviços de dados responsáveis por chamadas XHR, armazenamento local (local storage), armazenamento em memória (stashing) ou outras operações com dados. A responsabilidade dos controladores (controllers) é para a apresentação e coleta de informações da view. Eles não devem se importar como os dados são adquiridos, somente como "perguntar" por eles. Separar os serviços de dados (data services), move a lógica de como adquiri-los para o serviço e deixa o controlador (controller) mais simples e focado na view.</li></ul></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css">
+      <span class="c">/* Exemplo de Factory */</span>
+      (<span class="s">function</span> () {
+        angular
+          .<span class="na">module</span>("app")
+          .<span class="na">factory</span>("NomeDoService", NomeDoService);
+
+          NomeDoService.$inject <span class="s">=</span> ['$http'];
+
+          <span class="s">function</span> <span class="na">NomeDoService</span> ($http) {
+            <span class="s">return</span> {
+              <span class="na">nomeDaFuncao</span>: nomeDaFuncao;
+            }
+            <span class="c">/* Função Nomeada */</span>
+            <span class="s">function</span> <span class="na">nomeDaFuncao</span> ($http) {
+              <span class="s">return</span> $http.get('/url/my/api')
+                      .<span class="span na">then</span> (sucesso)
+                      .<span class="na">catch</span> (erro);
+              <span class="s">function</span> <span class="na">sucesso</span> (response) {
+                <span class="s">return</span> response;
+              }
+              <span class="s">function</span> <span class="na">erro</span> (erro) {
+                <span class="s">return</span> erro;
+              }
+            }
+          }
+      })();
+
+      <span class="c">/* Delegue a lógica à services ou factories */</span>
+      (<span class="s">function</span> () {
+        angular
+          .<span class="na">module</span>("app")
+          .<span class="na">controller</span>("NomeDoController", NomeDoController);
+
+          NomeDoController.$inject <span class="s">=</span> ['NomeDoService'];
+
+          <span class="s">function</span> <span class="na">NomeDoController</span> (NomeDoService) {
+            <span class="s">var</span> vm            <span class="s">=</span> <span class="nt">this</span>;
+            vm.<span class="na">enviarMensagem</span> <span class="s">=</span> enviarMensagem;
+            vm.<span class="na">nome</span>           <span class="s">=</span> {};
+
+            enviarMensagem();
+
+            <span class="s">function</span> <span class="na">enviarMensagem</span> () {
+              <span class="s">return</span> NomeDoService.nomeDaFuncao()
+                      .then(<span class="s">function</span> () { ... })
+                      .catch(<span class="s">function</span> () { ... })
+            }
+            <span class="s">function</span> <span class="na">ativar</span> () { ... }
+          }
+      })();
+      </code></pre></div></div></div></div></div><div class="container-fluid"><h1>Directives</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>Quando estiver manipulando o DOM diretamente, utilize uma diretiva (directive). A manipulação do DOM pode ser difícil de testar, debugar, e há melhores maneiras (ex: CSS, animações (animations), templates)</li><li>Quando criar uma diretiva que faça sentido por si só como um elemento, utilize restrição E (elemento personalizado) e opcionalmente A (atributo personalizado). Geralmente, se ela pode ter o seu próprio controlador (controller), E é o apropriado. Em linhas gerais, EA é permitido, mas atente para a implementação como elemento quando faz sentido por si só e como atributo quando estende algo existente no DOM.</li><li>Utilize a sintaxe <span class="s">controllerAs</span> com uma diretiva para consistência com o uso de controller as com os pares view e controlador (controller).</li></ul></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css">
+      <span class="c">/* Exemplo de Directive */</span>
+      (<span class="s">function</span> () {
+        angular
+          .<span class="na">module</span>("app")
+          .<span class="na">directive</span>("NomeDaDiretiva", NomeDaDiretiva);
+
+          <span class="s">function</span> <span class="na">NomeDaDiretiva</span> () {
+            <span class="s">return</span> {
+              controller: controller,
+              controllerAs: "vm",
+              link: link,
+              restrict: "EA",
+              templateUrl: "caminho/do/arquivo/html"
+            }
+            <span class="c">/* Função Nomeada */</span>
+            <span class="s">function</span> <span class="na">link</span> (scope, controller, attrs) { ... }
+            <span class="s">function</span> <span class="na">controller</span> ($scope) { ... }
+          }
+      })();
+
+      <span class="nt">&lt;div <span class="na">nome-da-diretiva</span>&gt;</span><span class="nt">&lt;/div&gt;</span>
+      </code></pre></div></div></div></div></div><div class="container-fluid"><div class="col"><h3>Componentes</h3><br><p>No AngularJS, um Componente é um tipo especial de diretiva que usa uma configuração mais simples que é adequada para uma estrutura de aplicativo baseada em componentes.</p><p>Isso torna mais fácil escrever um aplicativo de forma semelhante ao uso de Componentes da Web ou ao uso do estilo de arquitetura de aplicativos do novo Angular.</p><br><p><b>Vantagens dos componentes:</b></p><ul><li>configuração mais simples do que diretivas simples</li><li>promova padrões e práticas recomendadas</li><li>otimizado para arquitetura baseada em componentes</li><li>As diretrizes dos componentes de escrita facilitarão a atualização para Angular</li></ul><p><b>Quando não usar Componentes:</b></p><ul><li>para diretivas que precisam executar ações nas funções de compilação e pré-ligação, porque elas não estão disponíveis</li><li>quando você precisa de opções avançadas de definição diretiva como prioridade, terminal, elemento múltiplo</li><li>quando você deseja uma diretiva que é acionada por um atributo ou classe CSS, em vez de um elemento</li></ul><span class="bg-danger"><b>IMPORTANTE:</b> Para a criação de um componente todo o time deverá ser consultado para avaliar se é realmente necessário pois nossa arquitetura não é baseada em componentes.</span></div></div><div class="container-fluid"><h1>Injeção de Dependência</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>Evite usar o atalho de sintaxe de declarar dependências sem usar uma abordagem segura para minificação</li><li>Use <code>$inject</code> para identificar manualmente suas dependências de componentes do AngularJS. Isto salvaguarda suas dependências de serem vulneráveis a problemas de minificação quando parâmetros podem ser encurtados. Evite criar dependências in-line pois listas longas podem ser difíceis de ler no array. Além disso, pode ser confuso o array ser uma série de strings enquanto o último item é a função do componente</li><li>Quando sua função estiver abaixo de um return o <code>$inject</code> pode ficar inacessível (isso pode acontecer em uma diretiva). Você pode resolver isso movendo o <code>$inject</code> para acima do code{return: ou usando a sintaxe alternativa de injeção de array.</li><li>Use <code>$inject</code> para identificar manualmente as dependências do seu resolvedor de rotas para componentes do AngularJS.</li></ul></div></div><div class="col-lg-6"><div class="col"><div class="modal-content bg-light"><pre><code class="language-css" data-lang="css">
+      <span class="c">/* Exemplo de Injeção de Dependência no Controller */</span>
+      (<span class="s">function</span> () {
+        angular
+          .<span class="na">module</span>("app")
+          .<span class="na">controller</span>("NomeDoController", NomeDoController);
+
+          NomeDoController.$inject <span class="s">=</span> ['NomeDoService'];
+
+          <span class="s">function</span> <span class="na">NomeDoController</span> (NomeDoService) { ... }
+      })();
+
+      <span class="c">/* Exemplo de Injeção de Dependência nas Rotas */</span>
+      (<span class="s">function</span> () {
+        angular
+          .<span class="na">module</span>("app")
+          .<span class="na">config</span>(config);
+
+          <span class="s">function</span> <span class="na">config</span> () {
+            ...
+            resolve: {
+              propriedade: nomeDaFuncao
+            }
+            ...
+          }
+
+          nomeDaFuncao.$inject <span class="s">=</span> ['NomeDoService'];
+
+          <span class="s">function</span> <span class="na">nomeDaFuncao</span> (NomeDoService) { ... }
+      })();
+      </code></pre></div></div></div></div></div><div class="container-fluid"><div class="col"><h3>Packages</h3><br><br><ul><li><a href="https://angularjs.org/">angular": "^1.6.4"</a></li><li><a href="https://github.com/assisrafael/angular-input-masks">angular-input-masks": "^2.6.0"</a></li><li><a href="https://github.com/angular-ui/ui-router">angular-ui-router": "^1.0.3"</a></li><li><a href="https://getbootstrap.com/">bootstrap": "^4.0.0-beta"</a></li><li><a href="https://github.com/jquery/jquery">jquery": "^3.2.1"</a></li><li><a href="https://lodash.com/">lodash": "^4.17.4"</a></li><li><a href="https://momentjs.com/">moment": "^2.18.1"</a></li><li><a href="https://github.com/danmasta/ng-resize">ng-resize": "^1.3.0"</a></li><li><a href="https://github.com/dbushell/Pikaday">pikaday": "^1.6.1"</a></li><li><a href="https://github.com/mgonto/restangular">restangular": "^1.6.1"</a></li><li><a href="https://gulpjs.com/">gulp": "^3.9.1"</a></li><li><a href="https://www.npmjs.com/package/gulp-clean">gulp-clean": "^0.3.2"</a></li><li><a href="https://www.npmjs.com/package/gulp-concat">gulp-concat": "^2.6.1"</a></li><li><a href="https://www.npmjs.com/package/gulp-html-replace">gulp-html-replace": "^1.6.2"</a></li><li><a href="https://www.npmjs.com/package/gulp-htmlhint">gulp-htmlhint": "^0.3.1"</a></li><li><a href="https://www.npmjs.com/package/gulp-htmlmin">gulp-htmlmin": "^3.0.0"</a></li><li><a href="https://www.npmjs.com/package/gulp-inject-stringified-html">gulp-inject-stringified-html": "^1.0.3"</a></li><li><a href="https://www.npmjs.com/package/gulp-jshint">gulp-jshint": "^2.0.4"</a></li><li><a href="https://www.npmjs.com/package/gulp-sass">gulp-sass": "^3.1.0"</a></li><li><a href="https://www.npmjs.com/package/gulp-svg-inject">gulp-svg-inject": "^1.0.0"</a></li><li><a href="https://www.npmjs.com/package/gulp-svg-sprite">gulp-svg-sprite": "^1.3.7"</a></li><li><a href="https://www.npmjs.com/package/gulp-uglify">gulp-uglify": "^3.0.0"</a></li><li><a href="https://www.npmjs.com/package/gulp-webserver">gulp-webserver": "^0.9.1"</a></li><li><a href="https://www.npmjs.com/package/jshint">jshint": "^2.9.5"</a></li><li><a href="https://www.npmjs.com/search?q=run-sequence">run-sequence": "^2.0.0"</a></li></ul></div></div><div class="container-fluid"><h1>Restangular</h1><br><div class="row"><div class="col-lg-6"><div class="col"><ul><li>Restangular é um serviço AngularJS que simplifica os pedidos comuns de GET, POST, DELETE e UPDATE com um mínimo de código de cliente.</li><li>Ele suporta todos os métodos HTTP .</li><li>Trabalha com Promises</li><li>Link da documentação <code><a target="_blank" href="https://github.com/mgonto/restangular">Restangular</a></code></li></ul></div></div><div class="col-lg-6"><div class="col modal-content bg-light"><pre>
+              <code class="language-html" data-lang="html">
+<br><br>
+<span class="c">/* Exemplo GET/</span>
+<span class="s">Restangular</span>.<span class="na">
+one</span>('service-cliente/api/parametro/').<span class="na">
+one</span>(param1).<span class="na">get()</span>.<span class="s">then</span>(function (data) {
+<span class="c">//success</span>
+});
+<span class="s">Restangular</span>.<span class="na">
+one</span>('service-cliente/api/parametro/').<span class="na">
+one</span>(param1).<span class="na">one</span>(param2).<span class="na">
+get()</span>.<span class="s">then</span>(function (data) {
+<span class="c">//success</span>
+});
+<br><br>
+<span class="c">/* Exemplo PUT/</span>
+<span class="s">Restangular</span>.
+<span class="na">all</span>('service-cliente/api/cliente-parametro/').
+<span class="na">customPUT</span>(objeto).<span class="s">then</span>(function (data) {
+<span class="c">//success</span>
+}).<span class="s">catch</span>(function(erro) {
+<span class="c">//erro</span>
+});
+<br><br>
+<span class="c">/* Exemplo POST/</span>
+<span class="s">Restangular</span>.<span class="na">all</span>
+('service-cliente/api/cliente-parametro/').<span class="na">post</span>
+(objeto).<span class="s">then</span>(function (data) {
+<span class="c">//success</span>
+}).<span class="s">catch</span>(function(erro) {
+<span class="c">//erro</span>
+});
+              </code>
+            </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="col">
+      <h3>Acessibilidade</h3><br><br>
+      <p>
+        Uma das principais atribuições do Governo Federal é promover a inclusão social. Entre as diversas iniciativas que visam atingir
+        esse objetivo, o governo investe no uso adequado e coordenado da tecnologia. Na última década, a expansão prodigiosa
+        da Internet vem revolucionando as formas de comunicação, de acesso à informação e de realização de negócios em todo
+        o mundo.<br><br>
+      </p>
+      <p>
+        Na última década, a expansão prodigiosa da Internet vem revolucionando as formas de comunicação, de acesso à informação e
+        de realização de negócios em todo o mundo. Mas a que se deve este fenômeno? Basicamente, deve-se ao seu potencial
+        para atingir instantaneamente um grande número de pessoas, independentemente de localização geográfica e de contexto
+        sócio-cultural.<br><br>
+      </p>
+      <p>
+        Neste contexto, a inacessibilidade de sítios eletrônicos exclui uma parcela significativa da população brasileira do acesso
+        às informações veiculadas na internet. O governo brasileiro - tendo em vista suas atribuições - não pode aceitar
+        tal situação na entrega de informações e serviços sob sua responsabilidade.
+      </p>
+      <p>
+        O <a target="blank" href="http://emag.governoeletronico.gov.br">Modelo de Acessibilidade em Governo Eletrônico (eMAG)</a>        tem o compromisso de ser o norteador no desenvolvimento e a adaptação de conteúdos digitais do governo federal, garantindo
+        o acesso a todos.<br><br>
+      </p>
+      <p>
+        As recomendações do eMAG permitem que a implementação da acessibilidade digital seja conduzida de forma padronizada, de fácil
+        implementação, coerente com as necessidades brasileiras e em conformidade com os padrões internacionais. É importante
+        ressaltar que o eMAG trata de uma versão especializada do documento internacional WCAG (Web Content Accessibility
+        Guidelines: Recomendações de Acessibilidade para Conteúdo Web) voltado para o governo brasileiro, porém o eMAG não
+        exclui qualquer boa prática de acessibilidade do WCAG.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="container-fluid">
+    <h1>Formulários</h1>
+    <br>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="col">
+
+          <h3>Validação</h3>
+          <p>
+            A validação de campos é feita em tempo real conforme a navegação do usuário pelo formulário.
+          </p>
+          <p>
+            Quando o usuário digitar algum dado inválido a mensagem de erro deverá aparecer abaixo do campo imediatamente após a digitação.
+          </p>
+          <p>
+            Não serão evidenciado os campos obrigatórios
+          </p>
+          <p>
+            Usaremos <code>novalidate</code> em nosso código, esta é uma boa prática já que nós mesmos estamos fazendo a validação,
+            dispensando a validação nativa do browser.
+          </p>
+          <p>
+            Utilize a classe condicional <code>is-invalid</code> para validar as entradas obrigatórias através das variáveis
+            <code>$invalid</code> e <code>$touched</code>.
+          </p>
+          <p>
+            Como estamos utilizando <code>$touched</code> como condicional para a validação dos campos obrigatórios, na submissção
+            do formulário se este estiver inválido, deverá percorrer todos os campos com <code>$erro.required</code> para aplicar
+            o método <code>$setTouched()</code> para que exiba a mensagem de Campo Obrigatório, é interessante também rolar a
+            página para o inicio.
+          </p>
+          <p>
+            Para organização das mensagens de erro será utilizado o módulo <code>ng-messages</code> que será o responsável pela exibição dos erros
+          </p>
+
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="col">
+          <div class="modal-content bg-light">
+              <pre><code class="language-html" data-lang="html">
+<span class="nt">&lt;form</span><span class="na">name=</span><span class="s">&quot;formEmpresa&quot;</span><span class="nt"><span class="na">ng-submit=</span>
+<span class="s">&quot;clienteFornecedor.submit(formEmpresa)&quot;</span>
+<span class="na">novalidate</span><span class="nt">&gt;</span><br>
+  <span class="nt">&lt;label</span><span class="na">class=</span><span class="s">&quot;texto-sm&quot;</span><span class="na">for=</span><span class="s">&quot;cpfCnpj&quot;</span><span class="nt">&gt;</span>CPF / CNPJ<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span><span class="na"> id=</span><span class="s">&quot;cpfCnpj&quot;</span><span class="na">ng-class=</span><span class="s">&quot;{'is-invalid':
+(formEmpresa.cpfCnpj.$invalid && formEmpresa.cpfCnpj.$touched)}&quot;</span>
+<span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="na">ui-br-cpfcnpj-mask</span><span class="nt">&gt;</span><span class="nt">&lt;/input&gt;</span><br>
+  <span class="nt">&lt;div</span><span class="na">ng-messages=</span><span class="s">&quot;formEmpresa.cpfCnpj.$error&quot;</span>
+<span class="na">ng-show=</span><span class="s">&quot;formEmpresa.cpfCnpj.$invalid &&
+formEmpresa.cpfCnpj.$touched&quot;</span><span class="nt">&gt;</span><br>
+<span class="nt">&lt;span</span><span class="na"> class=</span><span class="s">&quot;erro&quot;</span><span class="na">ng-message=</span><span class="s">&quot;required&quot;</span><span class="nt">&gt;</span>Campo Obrigatório<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span </span><span class="na"> class=</span><span class="s">&quot;erro&quot;</span><span class="na">ng-message=</span><span class="s">&quot;cpf&quot;</span><span class="nt">&gt;</span>CPF Inválido<span class="nt">&lt;/span&gt;</span><br>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;erro&quot;</span> <span class="na">ng-message=</span><span class="s">&quot;cnpj&quot;</span><span class="nt">&gt;</span>CNPJ Inválido<span class="nt">&lt;/span&gt;</span><span class="nt">&lt;/div&gt;</span><br>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary btn-sm&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>
+Salvar<span class="nt">&lt;/button&gt;</span><span class="nt">&lt;/form&gt;</span><br><br>
+<span class="c">/* Validação do Formulário na Controller */</span><br>
+<span class="s">function</span> <span class="na">submit</span> (dados) {
+<span class="na">if</span> <span class="s">(dados.$invalid)</span> {
+<span class="nt">angular.forEach</span><span class="s">(dados.$error.required, function (field)</span> {
+<span class="na">field</span><span class="s">.$setTouched()</span>;
+ });
+<span class="na">$window</span><span class="s">.scrollTo(0, 0)</span>;
+} <span class="na">else</span>{
+<span class="c">// Chamada para a API</span>
+}
+</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <h1>Autocompletar</h1>
+    <br>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="col">
+
+          <p>
+            A diretiva de preenchimento automático que utilizamos é o <code>angucomplete-alt</code>, essa diretiva é um fork do projeto original <code>angucomplete</code> de Daryl Rowland, que foi melhorado, adicionando algumas características extras e se tornou o mais utilizado no npmjs.
+          </p>
+          <p>
+            A documentação pode ser acessada no <a href="https://github.com/ghiden/angucomplete-alt">GitHub</a>.
+          </p>
+          <p>
+            Esse recurso pode ser customizado de forma que se torne totalmente personalizado.
+          </p>
+
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="col">
+          <div class="modal-content bg-light">
+              <pre><code class="language-html" data-lang="html">
+<span class="nt">&lt;div</span>
+<span class="na">angucomplete-alt</span><span class="nt">
+<span class="na">placeholder=</span><span class="s">&quot;Código do Serviço&quot;</span>
+<span class="na">minlength=</span><span class="s">&quot;2&quot;</span>
+<span class="na">maxlength=</span><span class="s">&quot;10&quot;</span>
+<span class="na">pause=</span><span class="s">&quot;500&quot;</span>
+<span class="na">field-required=</span><span class="s">&quot;true&quot;</span>
+<span class="na">selected-object=</span><span class="s">&quot;AtividadeController.selectedServico&quot;</span>
+<span class="na">local-data=</span><span class="s">&quot;AtividadeController.listaServicos&quot;</span>
+<span class="na">search-fields=</span><span class="s">&quot;codigo,descricao&quot;</span>
+<span class="na">description-field=</span><span class="s">&quot;descricao&quot;</span>
+<span class="na">title-field=</span><span class="s">&quot;codigo&quot;</span>
+<span class="na">input-class=</span><span class="s">&quot;form-control form-control-sm&quot;</span>
+<span class="na">match-class=</span><span class="s">&quot;highlight&quot;</span>
+<span class="na">input-name=</span><span class="s">&quot;codigo&quot;</span>
+<span class="na">auto-match=</span><span class="s">&quot;true&quot;</span>
+<span class="na">text-no-results=</span><span class="s">&quot;Nenhum registro encontrado&quot;</span>
+<span class="na">text-searching=</span><span class="s">&quot;Procurando...&quot;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">ng-messages=</span><span class="s">&quot;formAtividade.codigo.$error&quot;</span> <span class="na">ng-show=</span><br>
+<span class="s">&quot;formAtividade.codigo.$invalid &&<br>
+formAtividade.codigo.$touched&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;erro&quot;</span><br>
+<span class="na">ng-message=</span><span class="s">&quot;autocomplete-required&quot;</span><span class="nt">&gt;</span>Campo Obrigatório<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <h1>Eicon Grid</h1>
+    <br>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="col">
+          <h3>Instruções</h3>
+          <p>
+            A diretiva Eicon Grid foi desenvolvida para exibição de dados de APIs paginadas de acordo com o <a href="https://intra.eiconbrasil.com.br/PadroesdeCodificacao/PadroesparaAPIs.pdf">padrão Eicon de APIs</a>.
+          </p>
+          <p>
+            Seguindo o mesmo padrão visual de nossas outras grids Bootstrap 4, a Eicon Grid conta com recursos como injeção de serviço
+            paginado e paginação avançada.
+          </p>
+          <p>
+            Facilita a navegação ao paginar dinamicamente e permitindo que o usuário modifique a quantidade de itens exibidos sem perder
+            a referência da paginação.
+          </p>
+          <p>
+            Além disso também conta com uma navegação voltada a usabilidade, possibilitando fácil visualização dos campos passíveis de
+            ordenação e avanço duplo de páginas.
+          </p>
+          <p>
+            Para maior comodidade a utilização da diretiva depende apenas da injeção do serviço <span class="s">paginacao</span>        e sua configuração.
+          </p>
+          <p>
+            <span class="na">Durante o processo de adequação das APIs será necessário configurar manualmente a ordenação no HTML.</span>
+          </p>
+
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="col">
+          <div class="modal-content bg-light">
+<pre>
+<code class="language-html" data-lang="html">
+(
+<span class="nd">function ()</span>{
+<span class="nc">'use strict';</span>
+  <br>
+<span class="nn">angular</span>
+<span class="na">.module(</span>'giss'<span class="na">)</span>
+<span class="na">.controller(</span><span class="nc">'controleExemplo'</span><span class="na">,controleExemplo);</span>
+<span class="nd">function</span><span class="na">&nbsp;controleExemplo(</span>
+<span class="nt">$scope, $filter, $injector, servicoAtividadeAPI, </span>
+<span class="ne">paginacao</span>
+) { <br>
+/* jshint validthis: true */ <br>
+<span class="nd">var</span><span class="nn">vm</span><span class="na"> = </span><span class="nn">this</span>;
+<span class="ne">
+paginacao.setService(servicoAtividadeAPI.atividade() <br>
+  .one(idUsuario)); <br>
+  } <br>
+})();
+</span>
+</code></pre>
+            <pre>
+<code class="language-html" data-lang="html">
+<span class="na">
+    <span class="nt"> &lt;table</span>
+    class="datatable table table-bordered table-striped <br>table-sm table-condensed table-hover" role="grid"
+    <span class="ne">eicon-grid</span>&gt
+    <span class="nt"> &lt;thead&gt</span>
+    <span class="nt">&lt;th</span>
+    <span class="ne">
+ng-click="grid.ordenar('idAtividade')" <br>ng-class="{'sorting':grid.ordem!='idAtividade',<br>'sorting_asc':grid.ordem==='idAtividade' && <br>grid.ordenacao==='ASC','sorting_desc':grid.ordem <br>==='idAtividade' && grid.ordenacao==='DESC'}"<br> </span>Id Atividade
+     <span class="nt">&lt;/th&gt;</span>...
+</span>
+</code>
+</pre></div></div></div></div></div></div>

@@ -19,7 +19,7 @@
         menu : {
           eixo: 'Monitoração',
           titulo: 'Home',
-          icone: '#configuracao-boleto'
+          icone: '#worldwide'
         },
         url: '/monitoracao',
         views: {

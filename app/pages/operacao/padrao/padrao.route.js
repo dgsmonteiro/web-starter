@@ -21,7 +21,7 @@
         menu : {
           eixo: 'operacao',
           titulo: 'Padrão',
-          icone: '#configuracao-boleto'
+          icone: '#worldwide'
         },
         url: '/padrao',
         views: {

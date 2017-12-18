@@ -19,7 +19,7 @@
         menu: {
           eixo: 'Gestão',
           titulo: 'Ícones',
-          icone: '#configuracao-boleto'
+          icone: '#worldwide'
         },
         url: '/icones',
         views: {

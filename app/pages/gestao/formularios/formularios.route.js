@@ -19,7 +19,7 @@
         menu : {
           eixo: 'Gestão',
           titulo: 'Formulários',
-          icone: '#configuracao-boleto'
+          icone: '#worldwide'
         },
         url: '/formularios',
         views: {

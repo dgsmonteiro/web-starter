@@ -19,7 +19,7 @@
         menu : {
           eixo: 'Configuração',
           titulo: 'Conta Corrente',
-          icone: '#configuracao-boleto'
+          icone: '#worldwide'
         },
         url: '/boleto',
         views: {

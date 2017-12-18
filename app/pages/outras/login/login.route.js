@@ -12,8 +12,7 @@
       .state('root.login', {
         data: {
           autenticacao: false,
-          autorizacao: [],
-          pageTitle: 'Login - Projeto base'
+          autorizacao: []
         },
         url: '/login',
         views: {
@@ -24,4 +23,5 @@
         }
       });
   }
+
 })();

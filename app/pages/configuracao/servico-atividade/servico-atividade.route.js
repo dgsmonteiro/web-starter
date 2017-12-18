@@ -19,7 +19,7 @@
         menu : {
           eixo: 'Configuração',
           titulo: 'Serviço / Atividade',
-          icone: '#configuracao-boleto'
+          icone: '#worldwide'
         },
         url: '/servico-atividade',
         views: {

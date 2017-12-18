@@ -1,0 +1,326 @@
+@import '../_utilidades/_utilidades';
+
+//dropDown para box de usuário ativo
+.m-dropDownA {
+  border-right: pxToRem(1) solid $bordaAbaNotificacao;
+  display: inline-block;
+  position: relative;
+
+  &_userBox {
+    cursor: pointer;
+    @include flexContainer(flex, null, null, space-between, center, null);
+    padding: 0 pxToRem(5);
+    position: relative;
+    width: pxToRem(110);
+
+    &:before,
+    &:after {
+      content: '';
+      left: 0;
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+    }
+
+    &:before {
+      background-color: rgba($corSombra, .7);
+      bottom: 0;
+      display: block;
+      height: 0;
+      @include calc(right, '100% - #{pxToRem(300)}', null);
+      @include transition(width .15s .25s linear);
+      top: pxToRem(60);
+    }
+
+    &:after {
+      cursor: auto;
+      display: none;
+      height: pxToRem(60);
+      right: 0;
+      top: 0;
+    }
+
+    &_wrap {
+      border-radius: 50%;
+      display: inline-block;
+      overflow: hidden;
+      height: pxToRem(32);
+      width: pxToRem(32);
+
+      &_img {
+        max-width: 100%;
+        width: 100%;
+
+        @supports(object-fit: cover) {
+          height: 100%;
+          object-fit: cover
+        }
+      }
+    }
+
+    &_content {
+      @include calc(width, '100% - #{pxToRem(36)}', null);
+
+      &_text {
+        &_name,
+        &_type {
+          font-size: pxToRem(14);
+          line-height: pxToRem(20);
+          margin: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 100%;
+        }
+
+        &_name {
+          padding-right: pxToRem(20);
+          position: relative;
+
+          &:after {
+            content: url('../image/icons/down-arrow.svg');
+            display: inline-block;
+            height: pxToRem(16);
+            margin-top: pxToRem(-8);
+            position: absolute;
+            right: 0;
+            @include transition(transform .15s linear);
+            top: 50%;
+            width: pxToRem(16);
+          }
+        }
+
+        &_type {}
+      }
+    }
+  }
+
+  &_content {
+    background-color: $backgroudItemNotificacao;
+    @include calc(height, '100vh - #{pxToRem(60)}', null);
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    right: 0;
+    @include transform(scale(0));
+    @include transformOrigin(top right);
+    @include transition(transform .15s linear);
+    @include transformOrigin(top right);
+    top: pxToRem(51);
+    width: pxToRem(300);
+    z-index: 9999;
+
+    &_header {
+      background-color: $eixoAtivo;
+      color: rgba($backgroundBody, .8);
+      padding: pxToRem(10);
+      text-align: center;
+    }
+
+    &_wrap {
+      border-radius: 50%;
+      border: pxToRem(2) solid lighten($eixoAtivo, 40%);
+      display: inline-block;
+      height: pxToRem(90);
+      margin: 0 auto;
+      overflow: hidden;
+      width: pxToRem(90);
+
+      &_img {
+        width: 100%;
+
+        @supports (object-fit: cover) {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &_user {
+      &_profile,
+      &_last {
+        line-height: pxToRem(20);
+      }
+
+      &_profile {
+        font-size: pxToRem(16);
+      }
+
+      &_last {
+        font-size: pxToRem(12);
+      }
+    }
+
+    &_boxA {
+      background-color: $backgroudItemNotificacao;
+      border: pxToRem(2) solid;
+      border-color: transparent $bordaPerfilUsuario $bordaPerfilUsuario;
+      padding: pxToRem(10);
+
+      &_title {
+        font-size: pxToRem(16);
+        font-weight: 600;
+        line-height: pxToRem(20);
+        margin: 0;
+        padding-left: pxToRem(20);
+        position: relative;
+
+        &:before {
+          display: inline-block;
+          height: pxToRem(16);
+          left: 0;
+          position: absolute;
+          top: pxToRem(4);
+          width: pxToRem(16);
+        }
+
+        &--user,
+        &--company {
+          @extend .m-dropDownA_content_boxA_title;
+        }
+
+        &--user {
+          &:before {
+            content: url('../image/icons/user.svg');
+          }
+        }
+
+        &--company {
+          &:before {
+            content: url('../image/icons/company.svg');
+          }
+        }
+      }
+
+      &_list {
+        list-style: square;
+        padding: 0 0 0 pxToRem(20);
+
+        &_item {}
+      }
+
+      &_btn {
+        background-color: transparent;
+        border: none;
+        display: inline-block;
+        margin-bottom: pxToRem(5);
+        text-decoration: underline;
+      }
+    }
+
+    &_linkA {
+      border: pxToRem(2) solid;
+      border-color: transparent $bordaPerfilUsuario $bordaPerfilUsuario;
+      color: $corSombra;
+      display: block;
+      padding: pxToRem(10) pxToRem(10) pxToRem(10) pxToRem(30);
+      position: relative;
+      @include transition(border-color .15s linear, backgroundcolor .15s linear);
+
+      &:before {
+        display: inline-block;
+        height: pxToRem(14);
+        left: pxToRem(10);
+        position: absolute;
+        width: pxToRem(14);
+      }
+
+      &--data,
+      &--key {
+        @extend .m-dropDownA_content_linkA;
+      }
+
+      &--data {
+        &:before {
+          content: url('../image/icons/id-badge.svg');
+        }
+      }
+
+      &--key {
+        &:before {
+          content: url('../image/icons/padlock.svg');
+        }
+      }
+
+      &:hover {
+        background-color: $bordaPerfilUsuario;
+        border-color: $bordaPerfilUsuario;
+        color: $corSombra;
+      }
+
+      &:visited {
+        color: $corSombra;
+      }
+    }
+
+    &_footer {
+      @include flexContainer(flex, null, null, flex-end, null, null);
+      padding: pxToRem(15) pxToRem(20);
+    }
+  }
+
+  @media(min-width: pxToRem(400)) {
+    &_userBox {
+      width: pxToRem(192);
+    }
+  }
+
+  @media(min-width: pxToRem(768)) {
+    &_userBox {
+      &:before {
+        @include calc(right, '100% - #{pxToRem(320)}', null);
+        @include calc(width, '100% - #{pxToRem(320)}', null);
+      }
+
+      &_wrap {
+        height: pxToRem(40);
+        width: pxToRem(40);
+      }
+
+      &_content {
+        @include calc(width, '100% - #{pxToRem(44)}', null);
+      }
+    }
+
+    &_content {
+      width: pxToRem(320);
+
+      &_user {
+        &_profile {
+          font-size: pxToRem(20);
+        }
+
+        &_last {
+          font-size: pxToRem(14);
+        }
+      }
+    }
+  }
+}
+
+//Dropdowns header com triangulo
+.dropdown-menu {
+  margin-top: pxToRem(17) !important;
+}
+
+.dropdown-menu::before {
+   border-bottom: pxToRem(9) solid rgba($blackColor, 0.1);
+   border-left: pxToRem(9) solid rgba($blackColor, 0);
+   border-right: pxToRem(9) solid rgba($blackColor, 0);
+   content: "";
+   display: inline-block;
+   right: pxToRem(13);
+   position: absolute;
+   top: pxToRem(-8);
+}
+
+.dropdown-menu::after {
+   border-bottom: pxToRem(8) solid $whiteColor;
+   border-left: pxToRem(9) solid rgba($blackColor, 0);
+   border-right: pxToRem(9) solid rgba($blackColor, 0);
+   content: "";
+   display: inline-block;
+   right: pxToRem(13);
+   position: absolute;
+   top: pxToRem(-7);
+}

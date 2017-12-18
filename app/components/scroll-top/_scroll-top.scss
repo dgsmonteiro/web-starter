@@ -1,0 +1,14 @@
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    display:none;
+}
+button.back-to-top {
+    opacity: 0.4;
+}
+button:hover.back-to-top {
+    opacity: 1;
+}

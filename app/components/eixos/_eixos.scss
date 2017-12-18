@@ -1,0 +1,43 @@
+.navegacao_link:hover {
+  text-decoration: none;
+}
+
+.navegacao_eixo-ativo {
+  background: $headerEixos;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
+  color: $eixoAtivo;
+  padding: pxToRem(10) pxToRem(0);
+
+  .icone {
+    fill: $eixoAtivo;
+  }
+
+  &:hover {
+    background: $eixoAtivo;
+    color: $backgroundBody;
+    .icone {
+      fill: $backgroundBody;
+    }
+  }
+}
+
+.navegacao_eixo-naoAtivo {
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid white;
+  color: $eixoAtivo;
+  font-weight: 500;
+
+  .icone {
+    fill: $eixoAtivo;
+  }
+
+  &:hover {
+    border: 1px solid #dcdcdc;
+    color: $eixoInativoHover;
+    .icone {
+      fill: $eixoInativoHover;
+    }
+  }
+}

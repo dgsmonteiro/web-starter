@@ -1,0 +1,35 @@
+@import '../_utilidades/_utilidades';
+
+.btnGroupSeach {
+  padding:0.25rem 0.5rem ;
+  color:$perfilUsuario
+}
+
+.btnControlaMenu {
+  .btn:focus, .btn.focus {
+      outline: 0;
+      box-shadow: none;
+  }
+
+  .icone {
+    @include transition(transform .2s linear);
+    @include transform(rotate(-180deg));
+    @include transformOrigin(center);
+  }
+}
+
+//botão de menu quando aberto
+.btn-menu {
+  .icone {
+    @include transform(rotate(0));
+  }
+}
+
+.btn-primary,
+.btn-success,
+.btn-secondary,
+.btn-danger {
+  .icone {
+    fill: $backgroundBody;
+  }
+}

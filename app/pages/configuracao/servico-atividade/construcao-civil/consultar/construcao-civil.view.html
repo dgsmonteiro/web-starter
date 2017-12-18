@@ -1,0 +1,53 @@
+<breadcrumb></breadcrumb>
+
+<header role="heading" class="titlePage mb-4">
+  <h1>Configurar Atividades da Construção Civil</h1>
+</header>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-striped table-sm mt-3" datatable="ng">
+    <thead>
+    <tr>
+      <th>Código de Serviço</th>
+      <th>Código de Atividade</th>
+      <th>Descrição da Atividade</th>
+      <th>Alíquota</th>
+      <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="opcao in construcaoCivil.opcoesDaTabela track by opcao.id">
+      <td>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" />
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">{{ opcao.codigo }}</span>
+        </label>
+      </td>
+      <td>{{ opcao.codigoAtividade }}</td>
+      <td>{{ opcao.descricao }}</td>
+      <td>{{ opcao.aliquota }}</td>
+      <td class="text-center">
+        <button class="btn btn-primary btn-sm"
+                title="Exibir"
+                type="button">
+          <svg aria-hidden="true" class="icone icone-sm">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lupa-zoom-buscar-pesquisa"></use>
+          </svg>
+        </button>
+        <button class="btn btn-danger btn-sm ml-2"
+                sweetalert
+                sweet-options="construcaoCivil.alertaDeAnulacaoOpcoes"
+                sweet-confirm-option="construcaoCivil.alertaDeAnulacaoOpcaoConfirmacao"
+                sweet-on-confirm="construcaoCivil.anulaAtividadeConstrucaoCivil(opcao)"
+                title="Deletar"
+                type="button">
+          <svg aria-hidden="true" class="icone icone-sm">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lixo"></use>
+          </svg>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

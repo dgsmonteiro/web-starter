@@ -1,0 +1,105 @@
+<header class="header" ng-init="header.init()">
+  <div class="header_grid d-flex align-items-center">
+    <a class="header_boxLogo" ui-sref="root">
+      <svg aria-hidden="true" class="logo">
+        <use class="logo_text" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo_eicon_completo"></use>
+      </svg>
+    </a>
+
+    <div class="d-flex justify-content-between header_grid_conteudoBox">
+      <figure class="d-flex flex-row align-items-center align-self-stretch header_boxPrefeitura">
+        <div class="header_boxPrefeitura_logo">
+          <img class="header_boxPrefeitura_logo_img" src="images/logos/logo-cliente.png">
+        </div>
+
+        <figcaption class="header_boxPrefeitura_titulo">
+          <p class="header_boxPrefeitura_titulo_text" title="Prefeitura de São Caetano do Sul">Prefeitura de São Caetano do Sul</p>
+        </figcaption>
+      </figure>
+
+      <nav class="navegacao">
+        <ul class="navegacao_lista d-flex align-items-center justify-content-between">
+          <li class="navegacao_lista_item dropdown">
+            <eixos-directive>
+            </eixos-directive>
+          </li>
+          <li class="navegacao_lista_item dropdown" id="myDropDown">
+            <notificacoes-directive>
+            </notificacoes-directive>
+          </li>
+          <li class="navegacao_lista_item dropdown">
+            <ajuda-directive>
+            </ajuda-directive>
+          </li>
+          <li class="navegacao_lista_item">
+            <usuario-directive class="usuarioContainer">
+            </usuario-directive>
+          </li>
+          <li class="navegacao_lista_item dropdown">
+            <sistemas-directive>
+            </sistemas-directive>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center subHeader">
+    <div class="subHeader_eixo">
+      <div class="d-flex justify-content-between align-items-center">
+
+        <div class="subHeader_eixo_icone">
+          <svg aria-hidden="true" class="icone icone-md icone-sidebar-header">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{header.eixoAtivo[0].icone}}"></use>
+          </svg>
+        </div>
+        <h2 class="subHeader_eixo_titulo_texto">
+          {{header.eixoAtivo[0].nome}}
+        </h2>
+
+        <div class="btnControlaMenu">
+          <button
+          aria-label="Abrir ou fechar Menu lateral"
+          class="btn-link btn btn-secondary btn-sm"
+          ng-class="header.mostrarMenu ? 'btn-menu' : ''"
+          ng-click="header.clickMenu();"
+          title="Abrir ou fechar Menu"
+          type="button">
+          <svg aria-hidden="true" class="icone icone-md">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seta-direita-anterior-voltar"></use>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="subHeader_conteudo">
+    <section class="subHeader_conteudo_grid d-flex align-items-center justify-content-lg-between flex-wrap align-items-start">
+      <form name="busca" class="subHeader_conteudo_grid_boxBusca order-lg-1">
+        <div class="input-group input-group-sm">
+          <input
+          class="form-control form-control-sm"
+          id="buscaGeral"
+          name="buscaGeral"
+          placeholder="Pesquisar ..."
+          type="text">
+          <button class="input-group-addon btnGroupSeach">
+            <svg aria-hidden="true" class="icone icone-sm icone-pesquisa">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lupa-zoom-buscar-pesquisa"></use>
+            </svg>
+          </button>
+        </div>
+      </form>
+
+      <div class="subHeader_conteudo_grid_boxTitulo">
+        <h1 class="subHeader_conteudo_titulo" title="Secretaria da Fazenda - Departamento de Tributação | Escrituração de Serviços">
+          <strong>Secretaria da Fazenda - </strong>
+          <span class="subHeader_conteudo_titulo_subTitulo">Departamento de Tributação | <em>Escrituração de Serviços</em></span>
+        </h1>
+      </div>
+    </section>
+  </div>
+</div>
+</header>

@@ -1,0 +1,240 @@
+@import '../../../css/_utilidades/utilidades';
+
+//configuração do header principal e seus elementos
+.header {
+  background-color: $backgroundBody;
+  border-bottom: pxToRem(1) solid $backgroudItemNotificacao;
+  left: 0;
+  min-height: pxToRem(70);
+  border-bottom: pxToRem(1) solid #eee;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+
+  &_boxLogo {
+    display: inline-block;
+    width: pxToRem(270);
+
+    .logo {
+      margin-left: pxToRem(20);
+    }
+  }
+
+  &_boxPrefeitura {
+    background: url('../images/placeholder/header-gissonline.svg') bottom right no-repeat;
+    background-size: pxToRem(420) 95%;
+    min-height: pxToRem(66);
+    @include calc(width, '100% - #{pxToRem(320)}', null);
+
+    &_logo {
+      height: pxToRem(40);
+      width: pxToRem(40);
+
+      &_img {
+        width: 100%;
+
+        @supports (object-fit: contain) {
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &_titulo {
+      display: none;
+      font-size: pxToRem(24);
+      font-weight: 600;
+      @include calc(width, '100% - #{pxToRem(50)}', null);
+
+      &_text {
+        overflow: hidden;
+        padding-left: pxToRem(10);
+        text-overflow: ellipsis;
+        width: 100%;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &_grid {
+    border-bottom: pxToRem(1) solid $bordaPerfilUsuario;
+    min-height: pxToRem(62);
+
+    &_conteudoBox {
+      @include calc(width, '100% - #{pxToRem(270)}', null);
+    }
+  }
+
+  @media(min-width: pxToRem(788)) {
+    &_boxPrefeitura {
+      &_titulo {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+//subheader que deve ficar fixo
+.subHeader {
+  background:$backgroundBody;
+  border-bottom: pxToRem(2) solid $corSombra;
+  min-height: pxToRem(60);
+  width: 100%;
+
+  &_eixo {
+    background:$eixoInativoHover;
+    border-radius: pxToRem(8) pxToRem(8) 0 0;
+    //box-shadow: pxToRem(-2) pxToRem(4) pxToRem(16) pxToRem(2) $boxShadow;
+    color: $backgroundBody;
+    height: pxToRem(60);
+    padding: pxToRem(15) pxToRem(10);
+    width: pxToRem(270);
+
+    &_icone {
+      margin-left: pxToRem(9);
+    }
+
+    &_titulo {
+      @include calc(width, '100% - #{pxToRem(70)}', null);
+
+      &_texto {
+        font-size: pxToRem(20);
+        font-weight: 500;
+        line-height: pxToRem(32);
+        overflow: hidden;
+        padding-left: pxToRem(10);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+      }
+    }
+
+    .icone {
+      fill: $backgroundBody;
+
+      &:hover {
+        fill: $backgroundBody;
+      }
+    }
+  }
+
+  &_conteudo {
+    display: inline-block;
+    @include flexItens(null, null, 1 1 auto);
+    padding: 0 pxToRem(10);
+    @include calc(width, '100% - #{pxToRem(270)}', null);
+
+    &_titulo {
+      color: $corSombra;
+      font-size: pxToRem(14);
+      font-weight: 400;
+      margin: pxToRem(5) 0 pxToRem(5);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+
+      &_subTitulo {}
+    }
+
+    &_grid {
+      &_boxTitulo,
+      &_boxBusca {
+        @include flexItens(null, null, 1 1 auto);
+        display: inline-block;
+        width: 100%;
+      }
+    }
+  }
+
+  @media(min-width: pxToRem(992)) {
+    &_conteudo {
+      &_titulo {
+        font-size: pxToRem(18);
+
+        &_subTitulo {
+          font-size: pxToRem(14);
+        }
+      }
+
+      &_grid {
+        &_boxTitulo {
+          @include calc(width, '100% - #{pxToRem(300)}', null);
+        }
+
+        &_boxBusca {
+          width: pxToRem(280);
+        }
+      }
+    }
+  }
+
+  @media(min-width: pxToRem(992)) {
+    &_conteudo {
+      padding: 0 pxToRem(15);
+    }
+  }
+}
+
+//navegação de eixos, alertas e usuário
+.navegacao {
+  margin-right: pxToRem(10);
+  padding: pxToRem(12) 0 pxToRem(8);
+  width: pxToRem(300);
+
+  &_lista {
+    margin: 0;
+    padding: 0;
+
+    &_item {
+      display: inline-block;
+    }
+
+    &_link {
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      height: pxToRem(44);
+      position: relative;
+      transition: background-color .15s linear;
+      width: pxToRem(44);
+
+      &[data-bullet] {
+        &:after {
+          background-color: $backgroundNotificacao;
+          border-radius: 50%;
+          color: $backgroundBody;
+          content: attr(data-bullet);
+          display: inline-block;
+          font-size: pxToRem(10);
+          font-weight: 600;
+          height: pxToRem(16);
+          position: absolute;
+          right: pxToRem(5);
+          text-align: center;
+          top: pxToRem(5);
+          width: pxToRem(16);
+        }
+      }
+
+      &:hover,
+      .show & {
+        background-color: $eixoAtivo;
+
+        .icone-header {
+          fill: $backgroundBody;
+        }
+      }
+    }
+  }
+
+  &_dropdown {
+    border-radius: 0;
+    padding: 0;
+    box-shadow: 0 pxToRem(4) pxToRem(20) rgba($corSombra, .4);
+    min-width: pxToRem(300);
+  }
+}

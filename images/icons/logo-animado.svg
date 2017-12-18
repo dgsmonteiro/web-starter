@@ -1,0 +1,291 @@
+<svg 
+	id="logoCED" 
+	data-name="Camada 1" 
+	xmlns="http://www.w3.org/2000/svg" 
+	viewBox="0 0 273.51 278.53"
+	onload="">
+
+	<rect id="svgEditorBackground" x="0" y="357.6000061035156" style="fill:none;stroke:none;"/>
+    <style>
+        #path01{fill:#3f2911;}
+        #path02{fill:#3f2911;}
+        #path03{fill:#7e5019;}
+        #path04{fill:#7e5019;}
+        #path05{fill:#bf771b;}
+        #path06{fill:#e58f20;}
+        #path07{fill:#bf771b;}
+        #path08{fill:#e58f20;}
+        #path09{fill:#7e5019;}
+        #path10{fill:#3f2911;}
+        #path11{fill:#7e5019;}
+        #path12{fill:#3f2911;}
+
+	@keyframes path01Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		16.67% {
+			transform: scale(0.5, 0.5);
+		}
+		33.33% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path01 {
+		transform-origin: 50% 50% !important;
+		animation: path01Animation 1s infinite;
+	}
+
+
+
+	@keyframes path02Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		16.67% {
+			transform: scale(0.5, 0.5);
+		}
+		33.33% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path02 {
+		transform-origin: 50% 50% !important;
+		animation: path02Animation 1s infinite;
+	}
+
+
+
+	@keyframes path03Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		16.67% {
+			transform: scale(0.5, 0.5);
+		}
+		33.33% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path03 {
+		transform-origin: 50% 50% !important;
+		animation: path03Animation 1s infinite;
+	}
+
+
+
+	@keyframes path04Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		16.67% {
+			transform: scale(0.5, 0.5);
+		}
+		33.33% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path04 {
+		transform-origin: 50% 50% !important;
+		animation: path04Animation 1s infinite;
+	}
+
+
+
+	@keyframes path08Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		33.33% {
+			transform: scale(1, 1);
+		}
+		50% {
+			transform: scale(0.5, 0.5);
+		}
+		66.67% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path08 {
+		transform-origin: 50% 50% !important;
+		animation: path08Animation 1s infinite;
+	}
+
+
+
+	@keyframes path07Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		33.33% {
+			transform: scale(1, 1);
+		}
+		50% {
+			transform: scale(0.5, 0.5);
+		}
+		66.67% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path07 {
+		transform-origin: 50% 50% !important;
+		animation: path07Animation 1s infinite;
+	}
+
+
+
+	@keyframes path06Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		33.33% {
+			transform: scale(1, 1);
+		}
+		50% {
+			transform: scale(0.5, 0.5);
+		}
+		66.67% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path06 {
+		transform-origin: 50% 50% !important;
+		animation: path06Animation 1s infinite;
+	}
+
+
+
+	@keyframes path05Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		33.33% {
+			transform: scale(1, 1);
+		}
+		50% {
+			transform: scale(0.5, 0.5);
+		}
+		66.67% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path05 {
+		transform-origin: 50% 50% !important;
+		animation: path05Animation 1s infinite;
+	}
+
+
+
+	@keyframes path09Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		66.67% {
+			transform: scale(1, 1);
+		}
+		83.33% {
+			transform: scale(0.5, 0.5);
+		}
+		100% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path09 {
+		transform-origin: 50% 50% !important;
+		animation: path09Animation 1s infinite;
+	}
+
+
+
+	@keyframes path10Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		66.67% {
+			transform: scale(1, 1);
+		}
+		83.33% {
+			transform: scale(0.5, 0.5);
+		}
+		100% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path10 {
+		transform-origin: 50% 50% !important;
+		animation: path10Animation 1s infinite;
+	}
+
+
+
+	@keyframes path11Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		66.67% {
+			transform: scale(1, 1);
+		}
+		83.33% {
+			transform: scale(0.5, 0.5);
+		}
+		100% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path11 {
+		transform-origin: 50% 50% !important;
+		animation: path11Animation 1s infinite;
+	}
+
+
+
+	@keyframes path12Animation {
+		0% {
+			transform: scale(1, 1);
+		}
+		66.67% {
+			transform: scale(1, 1);
+		}
+		83.33% {
+			transform: scale(0.5, 0.5);
+		}
+		100% {
+			transform: scale(1, 1);
+		}
+	}
+
+	#path12 {
+		transform-origin: 50% 50% !important;
+		animation: path12Animation 1s infinite;
+	}
+    </style>
+        <title>
+            
+		logo_ced_icon
+	
+        </title>
+        <path id="path01" d="M92.38,135.71l46.74-61.91a10.21,10.21,0,0,0,4,2.4v58.38a10.35,10.35,0,0,0-6.67,6.67H96.64a10.42,10.42,0,0,0-4.26-5.53"/>
+        <path id="path02" d="M139.58,214.06,103,165.65l-9.89-13.09a10.4,10.4,0,0,0,3.5-5h39.82a10.35,10.35,0,0,0,6.67,6.67v57.82a10.27,10.27,0,0,0-3.55,2"/>
+        <path id="path03" d="M199.47,152.56,153,214.06a10.23,10.23,0,0,0-3.55-2V154.24a10.33,10.33,0,0,0,6.67-6.67H196a10.33,10.33,0,0,0,3.49,5"/>
+        <path id="path04" d="M153.49,73.8l46.74,61.91a10.35,10.35,0,0,0-4.26,5.53H156.15a10.37,10.37,0,0,0-6.67-6.67V76.2a10.4,10.4,0,0,0,4-2.4"/>
+        <path id="path05" d="M86.85,154.74l45.07,59.68L9.56,147.57H77a10.33,10.33,0,0,0,9.84,7.16Z"/>
+        <path id="path06" d="M9.55,141.24,129.91,75.49,85.62,134.14a10.38,10.38,0,0,0-8.66,7.1Z"/>
+        <path id="path07" d="M205.76,154.74l-45.07,59.68,122.37-66.85H215.64a10.33,10.33,0,0,1-9.84,7.16Z"/>
+        <path id="path08" d="M283.06,141.24,162.71,75.49,207,134.14a10.36,10.36,0,0,1,8.65,7.1Z"/>
+        <path id="path09" d="M136.18,224,29.47,165.68l113.66,118V231.74a10.33,10.33,0,0,1-7-7.75"/>
+        <path id="path10" d="M149.48,283.67l113.66-118L156.44,224a10.35,10.35,0,0,1-7,7.75Z"/>
+        <path id="path11" d="M136.08,64.9,29.47,123.13l113.66-118V56.52a10.33,10.33,0,0,0-7.06,8.38"/>
+        <path id="path12" d="M149.48,5.14l113.66,118L156.53,64.9a10.35,10.35,0,0,0-7.06-8.38Z"/>
+    
+</svg>

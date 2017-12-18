@@ -1,0 +1,33 @@
+@import '../_utilidades/_utilidades';
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    padding: 0;
+    border: 0;
+}
+.dataTables_wrapper .dataTables_info {
+    margin-left: 3px;
+}
+.dataTables_filter {
+    margin-right: 0;
+}
+.dataTables_length {
+    margin: 3px;
+}
+.dataTables_length select {
+    border: 1px solid #E4E4E4;
+}
+.dataTables_wrapper table.dataTable tbody th, table.dataTable tbody td {
+    padding: 5px;
+}
+
+//correcao do posicionamento do menu dropdown dos itens do header quando a pagina é extensa.
+.dropdown-hack {
+  position: absolute !important;
+  transform: translate3d(pxToRem(-256), pxToRem(44), pxToRem(0)) !important;
+  top: pxToRem(0) !important;
+  left: pxToRem(0) !important;
+  will-change: transform !important;
+}

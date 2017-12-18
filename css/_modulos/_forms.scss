@@ -1,0 +1,153 @@
+@import '../_utilidades/_utilidades';
+
+//módulo para campos de formulários
+.m-formGroupA {
+  margin-bottom: pxToRem(10);
+  width: 100%;
+
+  &_title {
+    display: inline-block;
+    font-size: pxToRem(14);
+    font-weight: 600;
+    margin: pxToRem(5) 0;
+  }
+
+  &_wrap {
+    width: 100%;
+  }
+
+  @media(min-width: pxToRem(768)) {
+    &_title {
+      font-size: pxToRem(16);
+    }
+  }
+}
+
+
+//classes para uso dos toggles on/off, poderá morrer quando os componetes angular forem definidos
+.switch {
+  position: relative;
+  top:20px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+  input {
+    display: none;
+  }
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $bordaPerfilUsuario;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: .4s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: $white;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: .4s;
+  }
+  &.round {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 34px;
+    padding: 0.52em;
+    color:$white;
+    &:before {
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 50%;
+    }
+  }
+}
+
+input {
+  &:checked + .slider {
+    background-color: $corSwitch;
+    &:before {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translateX(26px);
+    }
+  }
+  &:focus + .slider {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 1px $corSwitch;
+  }
+}
+
+@media (max-width: 768px) {
+  .m-textTitleSubHeader {
+    font-size: pxToRem(18);
+  }
+}
+
+.m-textTitleSubHeader {
+  font-size: pxToRem(18);
+  color:$corSombra;
+}
+
+//classe de erro que irá mudar
+.s-error {
+  border-color: red;
+
+  &:focus {
+    border-color: red;
+  }
+}
+
+
+/* Customização do campo input="file" */
+
+.m-inputFile {
+  border-radius: .2rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  overflow: hidden;
+  padding: .25rem .5rem;
+	position: relative;	
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+  &_text {
+     color:$placeholderInputFile;
+  }
+
+  &_botao {
+    background-color: lighten($bordaSessaoFormularios, 5%);
+    bottom: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: .44em 1em 0;
+    position: absolute;    
+    right: -1px;
+    top: 0;
+	
+    &:hover {
+      background-color: $bordaSessaoFormularios;
+    }
+  }
+
+  &_campo {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+  }
+
+}
+ 
+   
+.m-custom-file-label{  
+  width: 100%;
+}

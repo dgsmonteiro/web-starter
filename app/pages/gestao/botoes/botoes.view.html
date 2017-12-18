@@ -1,0 +1,800 @@
+<breadcrumb></breadcrumb>
+
+<div class="titlePage mb-2">
+  <h1>Padronização de Botões</h1>
+  <h2>Modelo padrão do uso de botões a ser utilizado nos projetos.</h2>
+</div>
+
+<div class="row no-gutters my-4">
+  <button class="btn btn-sm btn-secondary">Ações Neutras</button>
+  <button class="btn btn-sm btn-primary ml-2">Ações Secundarias</button>
+  <button class="btn btn-sm btn-success ml-2">Ações Positivas</button>
+  <button class="btn btn-sm btn-outline-danger ml-2">Ações Negativas</button>
+</div>
+
+<p class="mb-4">Botões Verdes do bootstrap V4, serão utilizados para as ações positivas das telas, incluindo a confirmação de formulários (Salvar), além de ações como adicionar, cadastrar novos itens e etc.</p>
+
+<div class="row">
+  <div class="col-12 col-md-6">
+    <form name="formBtnVerde" class="mt-2">
+      <p class="text-success mb-2">
+        <strong>Botão para enviar/confirmar dados do formulário</strong>
+      </p>
+
+      <fieldset class="border mb-4">
+        <legend class="legendFormulario">Informações Pessoais</legend>
+
+        <section class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="nomeAgrupado">Nome</label>
+              <input class="form-control form-control-sm"
+                     id="nomeAgrupado"
+                     name="nomeAgrupado"
+                     placeholder="Maria do Rosário"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="sobrenomeAgrupado">Sobrenome</label>
+              <input class="form-control form-control-sm"
+                     id="sobrenomeAgrupado"
+                     name="sobrenomeAgrupado"
+                     placeholder="Ex: Silva"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="dataNascAgrupado">Data Nascimento</label>
+              <input aria-label="O campo data nascimento é obrigatório"
+                     class="form-control form-control-sm"
+                     id="dataNascAgrupado"
+                     format="DD/MM/YYYY"
+                     moment-picker="formularios.inicio"
+                     name="dataNascAgrupado"
+                     placeholder="Ex: 01/01/1990"
+                     start-view="month"
+                     type="text">
+            </div>
+          </div>
+        </section>
+      </fieldset>
+
+      <fieldset class="border mb-4">
+        <legend class="legendFormulario">Informações para Contato</legend>
+
+        <section class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="telefoneRAgrupado">Telefone residencial</label>
+              <input aria-required="true"
+                     class="form-control form-control-sm"
+                     id="telefoneRAgrupado"
+                     name="telefoneRAgrupado"
+                     placeholder="(11) 2175-1111"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="TelefoneCAgrupado">Celular <small>(Opcional)</small></label>
+              <input aria-required="true"
+                     class="form-control form-control-sm"
+                     id="TelefoneCAgrupado"
+                     name="TelefoneCAgrupado"
+                     placeholder="Ex: (11) 99685-2381"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="emailAgrupado">Email <small>(Opcional)</small></label>
+              <input class="form-control form-control-sm"
+                     id="emailAgrupado"
+                     name="emailAgrupado"
+                     placeholder="Ex: mail@mail.com"
+                     type="text">
+            </div>
+          </div>
+        </section>
+      </fieldset>
+
+      <div class="row no-gutters justify-content-end mb-2">
+        <button class="btn btn-sm btn-success">Salvar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <form name="formBtnVerdeErrado" class="mt-2">
+      <p class="text-danger mb-2">
+        <strong>Botão para enviar/confirmar dados do formulário</strong>
+      </p>
+
+      <fieldset class="border mb-4">
+        <legend class="legendFormulario">Informações Pessoais</legend>
+
+        <section class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="nomeBtnVerdeErrado">Nome</label>
+              <input class="form-control form-control-sm"
+                     id="nomeBtnVerdeErrado"
+                     name="nomeBtnVerdeErrado"
+                     placeholder="Maria do Rosário"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="sobrenomeBtnVerdeErrado">Sobrenome</label>
+              <input class="form-control form-control-sm"
+                     id="sobrenomeBtnVerdeErrado"
+                     name="sobrenomeBtnVerdeErrado"
+                     placeholder="Ex: Silva"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="dataNascBtnVerdeErrado">Data Nascimento</label>
+              <input aria-label="O campo data nascimento é obrigatório"
+                     class="form-control form-control-sm"
+                     id="dataNascBtnVerdeErrado"
+                     format="DD/MM/YYYY"
+                     moment-picker="formularios.inicio"
+                     name="dataNascBtnVerdeErrado"
+                     placeholder="Ex: 01/01/1990"
+                     start-view="month"
+                     type="text">
+            </div>
+          </div>
+        </section>
+      </fieldset>
+
+      <fieldset class="border mb-4">
+        <legend class="legendFormulario">Informações para Contato</legend>
+
+        <section class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="telefoneRBtnVerdeErrado">Telefone residencial</label>
+              <input aria-required="true"
+                     class="form-control form-control-sm"
+                     id="telefoneRBtnVerdeErrado"
+                     name="telefoneRBtnVerdeErrado"
+                     placeholder="(11) 2175-1111"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="TelefoneCBtnVerdeErrado">Celular
+                <small>(Opcional)</small></label>
+              <input aria-required="true"
+                     class="form-control form-control-sm"
+                     id="TelefoneCBtnVerdeErrado"
+                     name="TelefoneCBtnVerdeErrado"
+                     placeholder="Ex: (11) 99685-2381"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="emailBtnVerdeErrado">Email
+                <small>(Opcional)</small></label>
+              <input class="form-control form-control-sm"
+                     id="emailBtnVerdeErrado"
+                     name="emailBtnVerdeErrado"
+                     placeholder="Ex: mail@mail.com"
+                     type="text">
+            </div>
+          </div>
+        </section>
+      </fieldset>
+
+      <div class="row no-gutters justify-content-end mb-2">
+        <button class="btn btn-sm btn-primary">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<p class="my-4">Botões azuis na tonalidade escura do bootstrap V4, serão utilizados para ações secundarias das telas. Ações segundarias são aquelas que levam o usuário para uma segunda ( terceira, quarta e assim por diante) funcionalidade da tela. Por exemplo, editar, detalhar e enviar arquivos, ss três funcionalidades levarão o usuário a uma segunda tela ou etapa da tela, para executar a tarefa pertinente.</p>
+
+<div class="row">
+  <div class="col-12 col-md-6">
+    <fieldset class="border mb-4">
+      <legend class="legendFormulario">Lista com duas ações, sendo "enviar arquivo" ação secundaria e "Novo" ação positiva</legend>
+
+      <div class="mb-2 row no-gutters justify-content-end">
+        <button class="btn btn-sm btn-primary">Enviar Arquivo</button>
+        <button class="btn btn-sm btn-success ml-2">Novo Usuário</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-sm">
+          <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Data de Nascimento</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Maria do Rosário</td>
+            <td>Silva</td>
+            <td>20/05/1994</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <fieldset class="border mb-4">
+      <legend class="legendFormulario">Lista com duas ações, sendo "enviar arquivo" ação secundaria e "Novo" ação positiva</legend>
+
+      <div class="mb-2 row no-gutters justify-content-end">
+        <button class="btn btn-sm btn-primary">Enviar Arquivo</button>
+        <button class="btn btn-sm btn-success ml-2">Novo Usuário</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-sm">
+          <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Data de Nascimento</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Maria do Rosário</td>
+            <td>Silva</td>
+            <td>20/05/1994</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+<p class="my-4">Em casos onde exista mais de uma ação secundaria, ou seja, onde as cores possam a se repetir, é importante a distinção dos botões através de suas nomenclaturas e iconografias.</p>
+
+<div class="row">
+  <div class="col-12 col-md-6">
+    <fieldset class="border mb-4">
+      <legend class="legendFormulario">Lista com duas ações, sendo "enviar arquivo" ação secundaria e "Novo" ação positiva</legend>
+
+      <div class="mb-2 row no-gutters justify-content-end">
+        <button class="btn btn-sm btn-primary">Enviar Arquivo</button>
+        <button class="btn btn-sm btn-success ml-2">Novo Usuário</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-sm">
+          <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Ações</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Maria do Rosário</td>
+            <td>Silva</td>
+            <td>
+              <button class="btn btn-sm btn-primary">
+                <svg aria-hidden="true" class="icone icone-sm">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lapis-editar"></use>
+                </svg>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <fieldset class="border mb-4">
+      <legend class="legendFormulario">Lista com duas ações, sendo "enviar arquivo" ação secundaria e "Novo" ação positiva</legend>
+
+      <div class="mb-2 row no-gutters justify-content-end">
+        <button class="btn btn-sm btn-primary">Enviar Arquivo</button>
+        <button class="btn btn-sm btn-success ml-2">Novo Usuário</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-sm">
+          <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Ações</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Maria do Rosário</td>
+            <td>Silva</td>
+            <td>
+              <button class="btn btn-sm btn-info">
+                <svg aria-hidden="true" class="icone icone-sm">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lapis-editar"></use>
+                </svg>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+<p class="my-4">Botões vermelho do bootstrap V4, serão utilizados para as ações que remetem a semântica negativa, deletar, excluir, bloquear, desativar, remover e etc. Contudo, será utilizado o segundo estilo proposto pelo framework, onde se apresenta em vermelho a borda do botão, e apenas no :hover o mesmo é preenchido. Desta forma a ação negativa ao não chamará mais atenção na tela do que o restante das ações presente na mesma.</p>
+
+<section class="row">
+  <div class="col-12 col-md-6">
+    <form name="formVoltar" class="mt-2">
+      <p class="text-success mb-2">
+        <strong>Exemplo botão voltar</strong>
+      </p>
+
+      <fieldset class="border mb-4">
+        <legend class="legendFormulario">Informações Pessoais</legend>
+
+        <section class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="nomeVoltar">Nome</label>
+              <input class="form-control form-control-sm"
+                     id="nomeVoltar"
+                     name="nomeVoltar"
+                     placeholder="Maria do Rosário"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="sobrenomeVoltar">Sobrenome</label>
+              <input class="form-control"
+                     id="sobrenomeVoltar"
+                     name="sobrenomeVoltar"
+                     placeholder="Ex: Silva"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="dataNascVoltar">Data Nascimento</label>
+              <input aria-label="O campo data nascimento é obrigatório"
+                     class="form-control form-control-sm"
+                     format="DD/MM/YYYY"
+                     id="dataNascVoltar"
+                     moment-picker="formularios.inicio"
+                     name="dataNascVoltar"
+                     placeholder="Ex: 01/01/1990"
+                     start-view="month"
+                     type="text">
+            </div>
+          </div>
+        </section>
+      </fieldset>
+
+      <fieldset class="border mb-4">
+        <legend class="legendFormulario">Informações para Contato</legend>
+
+        <section class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="telefoneRVoltar">Telefone residencial</label>
+              <input aria-required="true"
+                     class="form-control form-control-sm"
+                     id="telefoneRVoltar"
+                     name="telefoneRAgrupado"
+                     placeholder="(11) 2175-1111"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="TelefoneCVoltar">Celular <small>(Opcional)</small></label>
+              <input aria-required="true"
+                     class="form-control form-control-sm"
+                     id="TelefoneCVoltar"
+                     name="TelefoneCVoltar"
+                     placeholder="Ex: (11) 99685-2381"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="emailVoltar">Email <small>(Opcional)</small></label>
+              <input class="form-control form-control-sm"
+                     id="emailVoltar"
+                     name="emailVoltar"
+                     placeholder="Ex: mail@mail.com"
+                     type="text">
+            </div>
+          </div>
+        </section>
+      </fieldset>
+
+      <div class="row no-gutters justify-content-end mb-2">
+        <button class="btn btn-sm btn-secondary">Voltar</button>
+        <button class="btn btn-sm btn-success ml-2">Salvar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <form name="formVoltarErro" class="mt-2">
+      <p class="text-success mb-2">
+        <strong>Exemplo botão voltar</strong>
+      </p>
+
+      <fieldset class="border mb-4">
+        <legend class="legendFormulario">Informações Pessoais</legend>
+
+        <section class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="nomeVoltarErro">Nome</label>
+              <input class="form-control form-control-sm"
+                     id="nomeVoltarErro"
+                     name="nomeVoltarErro"
+                     placeholder="Maria do Rosário"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="sobrenomeVoltar">Sobrenome</label>
+              <input class="form-control form-control-sm"
+                     id="sobrenomeVoltarErro"
+                     name="sobrenomeVoltarErro"
+                     placeholder="Ex: Silva"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="dataNascVoltarErro">Data Nascimento</label>
+              <input aria-label="O campo data nascimento é obrigatório"
+                     class="form-control form-control-sm"
+                     format="DD/MM/YYYY"
+                     id="dataNascVoltarErro"
+                     moment-picker="formularios.inicio"
+                     name="dataNascVoltarErro"
+                     placeholder="Ex: 01/01/1990"
+                     start-view="month"
+                     type="text">
+            </div>
+          </div>
+        </section>
+      </fieldset>
+
+      <fieldset class="border mb-4">
+        <legend class="legendFormulario">Informações para Contato</legend>
+
+        <section class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="telefoneRVoltarErro">Telefone residencial</label>
+              <input aria-required="true"
+                     class="form-control form-control-sm"
+                     id="telefoneRVoltarErro"
+                     name="telefoneRAgrupado"
+                     placeholder="(11) 2175-1111"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="TelefoneCVoltarErro">Celular <small>(Opcional)</small></label>
+              <input aria-required="true"
+                     class="form-control form-control-sm"
+                     id="TelefoneCVoltarErro"
+                     name="TelefoneCVoltarErro"
+                     placeholder="Ex: (11) 99685-2381"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="emailVoltarErro">Email
+                <small>(Opcional)</small></label>
+              <input class="form-control form-control-sm"
+                     id="emailVoltarErro"
+                     name="emailVoltarErro"
+                     placeholder="Ex: mail@mail.com"
+                     type="text">
+            </div>
+          </div>
+        </section>
+      </fieldset>
+
+      <div class="row no-gutters justify-content-end mb-2">
+        <button class="btn btn-sm btn-info">Voltar</button>
+        <button class="btn btn-sm btn-success ml-2">Salvar</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<p class="my-4">Botões vermelho do bootstrap V4, serão utilizados para as ações que remetem a semântica negativa, deletar, excluir, bloquear, desativar, remover e etc. Contudo, será utilizado o segundo estilo proposto pelo framework, onde se apresenta em vermelho a borda do botão, e apenas no :hover o mesmo é preenchido. Desta forma a ação negativa ao não chamará mais atenção na tela do que o restante das ações presente na mesma.</p>
+
+<section class="row">
+  <div class="col-12 col-md-6">
+    <fieldset class="border mb-4">
+      <legend class="legendFormulario">Excluir linha de dado da tabela</legend>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-sm">
+          <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Ações</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Maria do Rosário</td>
+            <td>Silva</td>
+            <td>
+              <button class="btn btn-sm btn-primary" type="button">
+                <svg aria-hidden="true" class="icone icone-sm">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lapis-editar"></use>
+                </svg>
+              </button>
+              <button class="btn btn-sm btn-outline-danger" type="button">
+                <svg aria-hidden="true" class="icone icone-sm">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lixo"></use>
+                </svg>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <fieldset class="border mb-4">
+      <legend class="legendFormulario">Excluir linha de dado da tabela</legend>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-sm">
+          <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Ações</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Maria do Rosário</td>
+            <td>Silva</td>
+            <td>
+              <button class="btn btn-sm btn-primary" type="button">
+                <svg aria-hidden="true" class="icone icone-sm">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lapis-editar"></use>
+                </svg>
+              </button>
+              <button class="btn btn-sm btn-danger" type="button">
+                <svg aria-hidden="true" class="icone icone-sm">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lixo"></use>
+                </svg>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+  </div>
+</section>
+
+<div class="my-4">Os botões de ações positivas deverão estar posicionados sempre ao lado direito dos demais.</div>
+
+<div class="row">
+  <div class="col-12 col-md-6">
+    <fieldset class="border mb-4">
+      <legend class="legendFormulario">Posição botão de ação positiva.</legend>
+
+      <div class="row no-gutters justify-content-end mb-2">
+        <button class="btn btn-sm btn-primary">Enviar Arquivo</button>
+        <button class="btn btn-sm btn-success ml-2">Novo Usuário</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-sm">
+          <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Data de Nascimento</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Maria do Rosário</td>
+            <td>Silva</td>
+            <td>20/05/1994</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <fieldset class="border mb-4">
+      <legend class="legendFormulario">Posição botão de ação positiva.</legend>
+
+      <div class="row no-gutters justify-content-end mb-2">
+        <button class="btn btn-sm btn-success">Novo Usuário</button>
+        <button class="btn btn-sm btn-primary ml-2">Enviar Arquivo</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-sm">
+          <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Data de Nascimento</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Maria do Rosário</td>
+            <td>Silva</td>
+            <td>20/05/1994</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+<p class="my-4">Botões para submeter os dados de um formulário, deverão estar abaixo dos campos do formulário e posicionados a direita.</p>
+
+<div class="row">
+  <div class="col-12 col-md-6">
+    <form name="formBtnPosicao" class="mt-2">
+      <p class="text-success mb-2">Posição do botão do formulário</p>
+
+      <fieldset class="border mb-4">
+        <legend class="legendFormulario">Informações Pessoais</legend>
+
+        <section class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="nomeBtnPosicao">Nome</label>
+              <input class="form-control form-control-sm"
+                     name="nomeBtnPosicao"
+                     id="nomeBtnPosicao"
+                     placeholder="Maria do Rosário"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="sobrenomeBtnPosicao">Sobrenome</label>
+              <input class="form-control form-control-sm"
+                     name="sobrenomeBtnPosicaoo"
+                     id="sobrenomeBtnPosicao"
+                     placeholder="Ex: Silva"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="dataNascBtnPosicao">Data Nascimento</label>
+              <input aria-label="O campo data nascimento é obrigatório"
+                     class="form-control form-control-sm"
+                     format="DD/MM/YYYY"
+                     id="dataNascBtnPosicao"
+                     moment-picker="formularios.inicio"
+                     name="dataNascBtnPosicao"
+                     placeholder="Ex: 01/01/1990"
+                     start-view="month"
+                     type="text">
+            </div>
+          </div>
+        </section>
+      </fieldset>
+
+      <div class="row no-gutters justify-content-end mb-2">
+        <button class="btn btn-sm btn-success">Salvar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <form name="formBtnPosicaoErrado" class="mt-2">
+      <p class="text-success mb-2">Posição do botão do formulário</p>
+
+      <fieldset class="border mb-4">
+        <legend class="legendFormulario">Informações Pessoais</legend>
+
+        <section class="row">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="nomePosicaoErrado">Nome</label>
+              <input class="form-control form-control-sm"
+                     name="nomePosicaoErrado"
+                     id="nomePosicaoErrado"
+                     placeholder="Maria do Rosário"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="sobrenomePosicaoErrado">Sobrenome</label>
+              <input class="form-control form-control-sm"
+                     name="sobrenomePosicaoErrado"
+                     id="sobrenomePosicaoErrado"
+                     placeholder="Ex: Silva"
+                     type="text">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <label class="form-control-label form-control-sm px-0" for="dataNascPosicaoErrado">Data Nascimento</label>
+              <input aria-label="O campo data nascimento é obrigatório"
+                     class="form-control form-control-sm"
+                     format="DD/MM/YYYY"
+                     id="dataNascPosicaoErrado"
+                     moment-picker="formularios.inicio"
+                     name="dataNascPosicaoErrado"
+                     placeholder="Ex: 01/01/1990"
+                     start-view="month"
+                     type="text">
+            </div>
+          </div>
+        </section>
+      </fieldset>
+
+      <div class="row no-gutters justify-content-end mb-2">
+        <button class="btn btn-sm btn-success">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>

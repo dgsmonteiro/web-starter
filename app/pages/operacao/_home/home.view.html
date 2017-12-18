@@ -1,0 +1,53 @@
+<breadcrumb></breadcrumb>
+
+<div class="row mt-3">
+  <div class="col-md-9">
+    <span class="msgBemVindo">Bem vindo a Eicon, veja abaixo algumas prioridades, notificações e pendências</span>
+  </div>
+  <div class="col-md-3 text-right">
+      <span class="dtAtualizacao">
+        <em>Atualizado em 25/05/2017</em>
+      </span>
+  </div>
+  <div class="col-12 mt-3">
+    <p class="linkIndicativos">
+      <svg aria-hidden="true" class="icone icone-md icone-header">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#avatar-pessoa-usuario"></use>
+      </svg>
+      <span>Indicativos de <strong>Tomador de Serviços</strong></span>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-3" ng-repeat="tomador in home.indicativosTomador">
+    <a href="#/" ui-sref="" class="boxLinkPrincipal d-flex justify-content-between align-items-center">
+      <div class="col-12">
+        <p class="boxLinkPrincipal_nome">{{tomador.nome}}</p>
+        <p class="boxLinkPrincipal_numero">{{tomador.numero}}</p>
+        <p class="boxLinkPrincipal_descricao">{{tomador.descricao}}</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-12 mt-3">
+    <p class="linkIndicativos">
+      <svg aria-hidden="true" class="icone icone-md icone-header">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bandeira-chegada-finalizacao"></use>
+      </svg>
+      <span>Indicativos de <strong>Prestador de Serviços</strong></span>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-3" ng-repeat="prestador in home.indicativosPrestador">
+    <a href="#/" ui-sref="" class="boxLinkPrincipal d-flex justify-content-between align-items-center">
+      <div class="col-12">
+        <p class="boxLinkPrincipal_nome">{{prestador.nome}}</p>
+        <p class="boxLinkPrincipal_numero">{{prestador.numero}}</p>
+        <p class="boxLinkPrincipal_descricao">{{prestador.descricao}}</p>
+      </div>
+    </a>
+  </div>
+</div>

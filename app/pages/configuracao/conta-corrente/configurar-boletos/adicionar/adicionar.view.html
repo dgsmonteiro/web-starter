@@ -1,0 +1,71 @@
+<breadcrumb></breadcrumb>
+
+<div class="titlePage mb-5">
+  <h1 class="mb-2">Configuração de boletos</h1>
+</div>
+
+<form autocomplete="off" name="grupoModelo" ng-submit="contaCorrente.salvarDados(grupoModelo.item)" novalidate>
+  <fieldset class="border mb-4">
+    <legend class="legendFormulario">Dados do boleto</legend>
+
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="form-group">
+          <label class="form-control-sm form-control-label px-0 mb-0" for="nomeGrupo">Dê um nome ao grupo</label>
+          <input class="form-control form-control-sm"
+                 id="nomeGrupo"
+                 name="nomeGrupo"
+                 ng-class="{'is-invalid': grupoModelo.nomeGrupo.$invalid && (grupoModelo.nomeGrupo.$touched || grupoModelo.$submitted)}"
+                 ng-model="grupoModelo.item.nomeGrupo"
+                 placeholder="Grupo de prestadores"
+                 required
+                 type="text">
+          <div ng-messages="grupoModelo.nomeGrupo.$error" ng-show="grupoModelo.nomeGrupo.$invalid && (grupoModelo.nomeGrupo.$touched || grupoModelo.$submitted)">
+            <span class="erro" ng-message="required">Campo Obrigatório</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="form-group">
+          <label class="form-control-label form-control-sm px-0" for="modelo">Tipo de geração de boleto</label>
+          <select class="form-control-sm form-control"
+                  id="modelo"
+                  name="modelo"
+                  ng-class="{'is-invalid': grupoModelo.modelo.$invalid && (grupoModelo.modelo.$touched || grupoModelo.$submitted)}"
+                  ng-model="grupoModelo.item.modelo"
+                  ng-options="modelo as modelo.descricao for modelo in contaCorrente.modelos track by $index">
+            <option disabled value="" selected>Selecione</option>
+          </select>
+          <div ng-messages="grupoModelo.modelo.$error" ng-show="grupoModelo.modelo.$invalid && (grupoModelo.modelo.$touched || grupoModelo.$submitted)">
+            <span class="erro" ng-message="required">Campo Obrigatório</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4">
+        <div class="form-group">
+          <label class="form-control-sm form-control-label px-0 mb-0" for="modulos">Escolha os módulos para criação dos grupos</label>
+          <select class="form-control-sm form-control"
+                  id="modulos"
+                  multiple
+                  name="modulos"
+                  ng-class="{'is-invalid': grupoModelo.modulos.$invalid && (grupoModelo.modulos.$touched || grupoModelo.$submitted)}"
+                  ng-model="grupoModelo.item.modulos">
+            <option ng-repeat="opcao in contaCorrente.modulosDeGrupos track by $index"
+                    ng-selected="$index === 1"
+                    ng-value="opcao.sigla">{{ opcao.descricao }}</option>
+          </select>
+          <div ng-messages="grupoModelo.modulos.$error" ng-show="grupoModelo.modulos.$invalid && (grupoModelo.modulos.$touched || grupoModelo.$submitted)">
+            <span class="erro" ng-message="required">Campo Obrigatório</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="row no-gutters justify-content-end">
+    <a class="btn btn-sm btn-secondary" ui-sref="root.configuracao.boleto">voltar</a>
+    <button class="btn btn-sm btn-primary ml-2" type="submit">Salvar</button>
+  </div>
+</form>

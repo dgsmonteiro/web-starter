@@ -1,0 +1,12 @@
+<nav class="menuPrincipal" ng-repeat="eixo in sidebar.eixoAtivo">
+  <ul class="nav flex-column">
+    <li class="nav-item" ng-repeat="rota in sidebar.lista | filter: {name: 'root.'+ eixo.rota}">
+      <a ui-sref="{{rota.name}}" ui-sref-active-eq="navLink-ativo" class="nav-link d-flex align-items-center text-capitalize" ng-if="rota.menu !== undefined">
+        <svg aria-hidden="true" class="icone icone-md">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{rota.menu.icone}}"></use>
+        </svg>
+        {{rota.menu.titulo}}
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,61 @@
+.navegacao_notificacao {
+  font-size: .6em;
+  left: pxToRem(-15);
+  position: relative;
+  top: pxToRem(-5);
+}
+
+.aba_alertas-tab
+.nav-link {
+  background: none;
+  border: none;
+  border-bottom: pxToRem(3) solid transparent;
+  height: pxToRem(50);
+
+  &:hover {
+    border: none;
+    border-bottom: pxToRem(3) solid $eixoAtivo;
+  }
+
+  &.active {
+    background: none;
+    border: none;
+    border-bottom: pxToRem(3) solid $eixoAtivo;
+  }
+}
+
+.mensagem_aviso {
+  height: pxToRem(50);
+}
+
+.mensagens {
+  max-height: pxToRem(200);
+  overflow: auto;
+
+  .navegacao-link {
+    font-size: pxToRem(16);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.mensagens_item {
+  @extend .mensagem_aviso;
+  background: $backgroudItemNotificacao;
+  border-top: pxToRem(1) solid $bordaPerfilUsuario;
+  font-size: pxToRem(12);
+
+  &:hover {
+    color: $backgroundIconeNotificacao;
+  }
+}
+
+.mensagens_item-iconeMensagem {
+  background: $eixoAtivo;
+  width: pxToRem(35);
+  height: pxToRem(35);
+  color: $backgroundBody;
+}

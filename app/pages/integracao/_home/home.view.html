@@ -1,0 +1,69 @@
+<breadcrumb></breadcrumb>
+
+<div class="titlePage mb-4">
+  <h1>Enviar arquivos</h1>
+</div>
+
+<div class="">
+  <form name="">
+    <div class="row">
+      <div class="col-12">
+        <label class="btn btn-primary d-block" for="inputFile">Clique para enviar seu arquivo</label>
+        <div class="form-group">
+          <label class="sr-only" for="inputFile">File Upload</label>
+          <input type="file" class="m-form-control-file text-primary" id="inputFile" accept="image/*" data-title="Arraste seu arquivo aqui" ng-file-model="files" multiple />
+        </div>
+      </div>
+    </div>
+
+    <table class="table table-bordered table-striped table-sm mt-4" ng-show="files.length > 0">
+      <thead>
+        <tr>
+          <th>Nome do Arquivo</th>
+          <th>Protocolo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="file in files">
+          <td>{{file.name}}</td>
+          <td>1234.54673.123</td>
+          <!--<td>{{ file.size }}</td>-->
+          <!--<td>{{ file.url }}</td>-->
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="paragraph mt-4">
+      Clique aqui
+      <a href="images/placeholder/user.png" class="m-btnIconB" title="ícone de download" download="image/placeholder/user.png"></a>
+      para download do layout padrão para envio do arquivo .pdf <span class="m-btnIconB" title="Arquivo PDF"></span>
+    </p>
+
+    <div class="row mt-4">
+      <div class="col-12 col-sm-6 col-lg-2 offset-md-8">
+        <a class="btn btn-sm btn-secondary btn-block" ui-sref="root.integracao.servico-atividade">Voltar</a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-2">
+        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modalMsgUploadServ" ng-disabled="!files.length">Enviar arquivos</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="modal fade" id="modalMsgUploadServ">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <br>
+          <p>Foram encontrados 15 códigos de serviço.</p>
+          <p>Confirma a inserção no sistema?</p>
+          <br>
+          <button class="btn btn-danger" data-dismiss="modal" type="button"></button>
+          <button class="btn btn-primary" data-dismiss="modal" type="button"></button>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

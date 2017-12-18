@@ -1,0 +1,46 @@
+//bootstrap vem em primeiro lugar pois nossos estilos devem ter
+//prioridade na espeficidade do CSS
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// Estilos base
+@import '_base/_normalize';
+@import '_base/_base';
+
+//Estilos de layout
+@import '_modulos/_container';
+@import '../app/components/header/_header';
+@import '../app/components/eixos/_eixos';
+@import '../app/components/notificacoes/_notificacoes';
+@import '../app/components/usuario/_usuario';
+@import '../app/components/sistemas/_sistemas';
+@import '../app/components/sidebar/_sidebar';
+@import '../app/components/rodape/_rodape';
+@import '../app/components/loader/_loader';
+@import '../app/components/breadcrumb/_breadcrumb';
+@import '../app/components/scroll-top/_scroll-top';
+
+//Estilos para módulos
+@import '_modulos/_boxes';
+@import '_modulos/_buttons';
+@import '_modulos/_collapses';
+@import '_modulos/_dropdowns';
+@import '_modulos/_formatting';
+@import '_modulos/_forms';
+@import '_modulos/_images';
+@import '_modulos/_lists';
+@import '_modulos/_multipleselect';
+@import '_modulos/_tables';
+@import '_modulos/_tabs';
+@import '_modulos/_icones';
+
+//Libs
+@import '../node_modules/angular-moment-picker/dist/angular-moment-picker';
+@import '../node_modules/sweetalert/dist/sweetalert';
+@import '../node_modules/angucomplete-alt/angucomplete-alt';
+@import '../node_modules/angular-joyride/dist/joyride';
+@import '../libs/datatable/datatable.bootstrap4';
+@import '../libs/datatable/angular-datatables';
+
+//Estilos para hacks(ainda avaliando a necessidade)
+@import '_hacks/_customize';
+@import '_hacks/_falbacks';

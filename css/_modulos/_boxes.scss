@@ -1,0 +1,132 @@
+@import '../_utilidades/_utilidades';
+
+//box com efeito de hover
+// que está na maioria das 'home'
+.boxLinkA {
+  background-color: $backgroundBody;
+  box-shadow: 0 0 pxToRem(10) pxToRem(2) rgba($corSombra, .2);
+  padding: pxToRem(20) pxToRem(10);
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+
+  &[data-hover] {
+    &:before {
+      background-color: rgba($corSombra, .6);
+      bottom: 0;
+      color: $backgroundBody;
+      content: attr(data-hover);
+      display: inline-block;
+      font-size: pxToRem(14);
+      left: 0;
+      padding: pxToRem(20);
+      position: absolute;
+      right: 0;
+      @include transformOrigin(bottom);
+      @include transform(scale(0));
+      @include transition(bottom .15s linear, transform .15s linear);
+      text-align: center;
+    }
+
+    &:hover {
+      &:before {
+        @include transform(scale(1));
+        top: 0;
+      }
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &_icon,
+  &_content {
+    display: inline-block;
+  }
+
+  &_icon {
+    fill: $perfilUsuario;
+    height: pxToRem(50);
+    width: pxToRem(50);
+  }
+
+  &_content {
+    color: $corSombra;
+    font-size: pxToRem(16);
+    font-weight: 400;
+    @include calc(width, '100% - #{pxToRem(75)}', null);
+  }
+}
+
+//box de indicativos que está na pagina principal
+.boxLinkPrincipal {
+  background-color: $backgroudItemNotificacao;
+  border: pxToRem(2) solid $backgroudItemNotificacao;
+  margin: pxToRem(10) pxToRem(0);
+  padding: pxToRem(10);
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: pxToRem(2) solid $corSombra;
+    text-decoration: none;
+  }
+
+  &_nome {
+    color: $eixoInativoHover;
+    font-weight: bold;
+    font-size: pxToRem(16);
+    margin: pxToRem(10) pxToRem(0);
+    padding: pxToRem(0);
+    text-align: center;
+  }
+
+  &_numero {
+    color: $corSombra;
+    font-weight: bold;
+    font-size: pxToRem(24);
+    margin: pxToRem(10) pxToRem(0);
+    padding: pxToRem(0);
+    text-align: center;
+  }
+
+  &_descricao {
+    color: $alterarSenha;
+    font-size: pxToRem(14);
+    margin: pxToRem(10) pxToRem(0);
+    padding: pxToRem(0);
+  }
+}
+
+.linkIndicativos {
+  color: $corSombra;
+  font-size: pxToRem(14);
+  font-weight: 500;
+}
+
+.msgBemVindo {
+  font-size: pxToRem(14);
+}
+
+.dtAtualizacao {
+  color: $bordaPerfilUsuario;
+  font-size: pxToRem(12);
+}
+
+.boxBordaGeral {
+ border: pxToRem(2) solid $backgroudItemNotificacao;
+}
+
+.drop-box {
+  background: $lightGray2;
+  border: pxToRem(3) dashed $darkGray1;
+  margin-left: pxToRem(10);
+  padding: pxToRem(10) pxToRem(10);
+  text-align: center;
+  width: auto;
+}
+
+.drop-box.dragover {
+  background: $lightGray2;
+  border: pxToRem(3) dashed $lightBlueColor;
+}

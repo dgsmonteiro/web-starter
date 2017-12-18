@@ -1,0 +1,168 @@
+@import '../../../css/_utilidades/utilidades';
+
+.usuarioContainer {
+  border-left: pxToRem(1) solid $bordaPerfilUsuario;
+  display: inline-block;
+  min-width: pxToRem(60);
+}
+
+.btnUsuario {
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  height: pxToRem(40);
+  margin: 0 auto;
+  overflow: hidden;
+  width: pxToRem(40);
+
+  &:before,
+  &:after {
+    content: "";
+    left: 0;
+    right: 0;
+    position: fixed;
+    @include transformOrigin(right);
+    @include transform(scaleX(0));
+    @include transition(transform .25s linear);
+    z-index: 200;
+  }
+
+  &:before {
+    background-color: transparent;
+    cursor: default;
+    height: pxToRem(62);
+    top: 0;
+  }
+
+  &:after {
+    background-color: rgba($corSombra, 0.7);
+    height: 100%;
+    top: pxToRem(62);
+    width: 100%;
+  }
+
+  &_image {
+    max-width: 100%;
+
+    @supports (object-fit: contain) {
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
+
+.boxPerfil {
+  background-color: $backgroundBody;
+  border-top: pxToRem(1) solid $bordaPerfilUsuario;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  right: pxToRem(-400);
+  @include transformOrigin(right);
+  @include transition(right .3s linear);
+  top: pxToRem(62);
+  z-index: 300;
+  width: pxToRem(400);
+
+  &::-webkit-scrollbar {
+    background-color: rgba($alterarSenha, .5);
+    border-radius: pxToRem(4);
+    width: pxToRem(10);
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: pxToRem(4);
+    width: pxToRem(10);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($corSombra, .3);
+    border-radius: pxToRem(4);
+    width: pxToRem(10);
+  }
+
+  &_header {
+    border-bottom: pxToRem(1) solid $bordaPerfilUsuario;
+    padding: pxToRem(20);
+
+    &_logo {
+      box-shadow: 0 pxToRem(1) pxToRem(10) rgba($corSombra, 0.4);
+      height: pxToRem(120);
+      overflow: hidden;
+      width: pxToRem(120);
+
+      &_imagem {
+        border: pxToRem(4) solid $backgroundBody;
+        width: 100%;
+
+        @supports (object-fit: cover) {
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+
+    &_informacoes {
+      @include calc(width, '100% - #{pxToRem(132)}', null);
+    }
+  }
+
+  &_boxInformacoes {
+    border-bottom: pxToRem(1) solid $bordaPerfilUsuario;
+    padding: pxToRem(20);
+
+    &_link,
+    &_linkBlock {
+      display: inline-block;
+    }
+
+    &_link {
+      color: $perfilUsuario;
+
+      &:visited,
+      &:focus,
+      &:hover {
+        color: $perfilUsuario;
+      }
+    }
+
+    &_linkBlock {
+      border-bottom: pxToRem(1) solid transparent;
+      color: $alterarSenha;
+      transition: border-color .15s linear;
+
+      &:visited,
+      &:focus,
+      &:hover {
+        color: $alterarSenha;
+        text-decoration: none;
+      }
+
+      &:hover {
+        border-bottom-color: $alterarSenha;
+      }
+    }
+
+    &-sm {
+      @extend .boxPerfil_boxInformacoes;
+      padding: pxToRem(5) pxToRem(20);
+    }
+  }
+}
+
+.perfilAberto {
+  overflow: hidden;
+
+  .btnUsuario {
+    &:before,
+    &:after {
+      @include transform(scaleX(1));
+    }
+  }
+
+  .boxPerfil {
+    right: 0;
+    z-index: 300;
+  }
+}

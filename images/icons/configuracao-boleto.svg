@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px"
+	 height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+<g id="configuracao-boleto">
+	<g>
+		<path fill-rule="evenodd" clip-rule="evenodd"  d="M10.3,7.7H4.1C4,7.7,3.9,7.8,3.9,7.9C3.9,8,4,8.1,4.1,8.1h6.2
+			c0.1,0,0.2-0.1,0.2-0.2C10.5,7.8,10.4,7.7,10.3,7.7z"/>
+		<path fill-rule="evenodd" clip-rule="evenodd"  d="M10.3,6H4.1C4,6,3.9,6.1,3.9,6.2c0,0.1,0.1,0.2,0.2,0.2h6.2
+			c0.1,0,0.2-0.1,0.2-0.2C10.5,6.1,10.4,6,10.3,6z"/>
+		<path fill-rule="evenodd" clip-rule="evenodd"  d="M14,4.1L9.9,0.1C9.9,0,9.9,0,9.8,0l0,0L3.1,0v0h0v0
+			C2.8,0,2.5,0.1,2.3,0.3C2,0.6,1.9,0.8,1.9,1.2v0v13.7v0h0c0,0.3,0.1,0.6,0.3,0.8C2.5,15.9,2.8,16,3.1,16v0h0h9.8
+			c0.3,0,0.6-0.1,0.8-0.3c0.2-0.2,0.3-0.5,0.3-0.8l0-10.5l0,0C14.1,4.2,14.1,4.2,14,4.1z M10,0.7l3.4,3.4h-2.7
+			c-0.2,0-0.4-0.1-0.5-0.2h0C10.1,3.7,10,3.5,10,3.3V0.7z M13.7,14.8c0,0.2-0.1,0.4-0.2,0.5c-0.1,0.1-0.3,0.2-0.5,0.2H3.1h0v0
+			c-0.2,0-0.4-0.1-0.5-0.2c-0.1-0.1-0.2-0.3-0.2-0.5h0v0V1.2v0c0-0.2,0.1-0.4,0.2-0.5c0.1-0.1,0.3-0.2,0.5-0.2v0h0v0h6.5v2.9
+			c0,0.3,0.1,0.6,0.3,0.8l0,0h0c0.2,0.2,0.5,0.3,0.8,0.3h2.9L13.7,14.8z"/>
+		<rect x="3.8" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.3" height="4"/>
+		<rect x="6.4" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.1" height="4"/>
+		<rect x="6.8" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.1" height="4"/>
+		<rect x="7.1" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.1" height="4"/>
+		<rect x="7.4" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.1" height="4"/>
+		<rect x="7.7" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.3" height="4"/>
+		<rect x="8.1" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.1" height="4"/>
+		<rect x="9.9" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.2" height="4"/>
+		<rect x="10.3" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.1" height="4"/>
+		<rect x="10.6" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.2" height="4"/>
+		<rect x="4.4" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.1" height="4"/>
+		<rect x="12.1" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.1" height="4"/>
+		<rect x="4.9" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="1.2" height="4"/>
+		<rect x="8.4" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.7" height="4"/>
+		<rect x="9.2" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.5" height="4"/>
+		<rect x="11" y="9.9" fill-rule="evenodd" clip-rule="evenodd"  width="0.8" height="4"/>
+	</g>
+</g>
+</svg>

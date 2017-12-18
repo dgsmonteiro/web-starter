@@ -1,0 +1,22 @@
+.breadcrumb--padrao {
+  background: none;
+  border-radius: 0;
+  font-size: pxToRem(14);
+  padding: 0;
+
+  .breadcrumb-item.active {
+    color: $placeholderInputFile;
+  }
+
+  a {
+    color:  $blueLightColor;
+
+    &:hover {
+      color: $darkBlueColor;
+    }
+  }
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+}

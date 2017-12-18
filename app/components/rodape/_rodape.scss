@@ -1,0 +1,49 @@
+@import '../../../css/_utilidades/utilidades';
+
+
+
+.rodape {
+  border-top: pxToRem(1) solid $eixoInativoHover;
+  font-size: pxToRem(12);
+  padding: pxToRem(5) pxToRem(10);
+  width: 100%;
+
+  &_texto {
+    font-size: pxToRem(12);
+
+    &-icone {
+      @extend .rodape_texto;
+      padding-left: pxToRem(36);
+      position: relative;
+
+      &:before {
+        background-color: $backgroundBody;
+        content: url('../images/placeholder/footer-gissonline.svg');
+        //content: $image;
+        height: pxToRem(32);
+        left: 0;
+        display: inline-block;
+        position: absolute;
+        top: pxToRem(-25);
+        width: pxToRem(32);
+      }
+    }
+  }
+
+  @media(min-width: pxToRem(576)) {
+    &_texto {
+      text-align: left;
+
+      &-icone {
+        padding-left: pxToRem(60);
+        text-align: right;
+
+        &:before {
+          height: pxToRem(54);
+          top: pxToRem(-40);
+          width: pxToRem(54);
+        }
+      }
+    }
+  }
+}

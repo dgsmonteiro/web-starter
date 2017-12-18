@@ -1,0 +1,144 @@
+<a
+  aria-expanded="false"
+  aria-haspopup="true"
+  class="navegacao_lista_link d-flex justify-content-center align-items-center"
+  data-bullet="16"
+  data-toggle="dropdown"
+  title="Alertas">
+  <svg class="icone icone-md icone-header">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#alerta-notificacao"></use>
+  </svg>
+</a>
+
+<div class="dropdown-menu dropdown-menu-right border-0 navegacao_dropdown dropdown-hack" id="tabs" role="menu">
+  <ul class="nav nav-tabs text-center align-items-center no-gutters aba_alertas-tab" ng-init="notificacoes.tab = 'notificacoes'" role="tablist">
+    <li class="col nav-item m-0">
+      <a class="nav-link active" data-toggle="tab" ng-click="notificacoes.tab = 'notificacoes'" role="tab">Notificações</a>
+    </li>
+    <li class="col nav-item m-0">
+      <a class="nav-link" data-toggle="tab" ng-click="notificacoes.tab = 'mensagens'" role="tab">Mensagens</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade" id="notificacoes" ng-class="{'show active' : notificacoes.tab === 'notificacoes'}" role="tabpanel">
+      <div class="d-flex align-items-center mensagem_aviso">
+        <div class="pl-3">
+          Você tem 4 mensagens
+        </div>
+      </div>
+      <ul class="mensagens list-unstyled">
+        <li>
+          <a class="navegacao-link" href="">
+            <div class="row no-gutters align-items-center pl-3 mensagens_item">
+              <div class="col-2">
+                <div class="d-flex justify-content-center align-items-center rounded-circle mensagens_item-iconeMensagem">
+                  <svg aria-hidden="true" class="icone icone-md icone-notificacao">
+
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mail-carta-envelope-mensagem"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="col-10">
+                Título da notificação.
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="navegacao-link" href="">
+            <div class="row no-gutters align-items-center pl-3 mensagens_item">
+              <div class="col-2">
+                <div class="d-flex justify-content-center align-items-center rounded-circle mensagens_item-iconeMensagem">
+                  <svg aria-hidden="true" class="icone icone-md icone-notificacao">
+
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mail-carta-envelope-mensagem"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="col-10">
+                Título da notificação.
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="navegacao-link" href="">
+            <div class="row no-gutters align-items-center pl-3 mensagens_item">
+              <div class="col-2">
+                <div class="d-flex justify-content-center align-items-center rounded-circle mensagens_item-iconeMensagem">
+                  <svg aria-hidden="true" class="icone icone-md icone-notificacao">
+
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mail-carta-envelope-mensagem"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="col-10">
+                Título da notificação.
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="navegacao-link" href="">
+            <div class="row no-gutters align-items-center pl-3 mensagens_item">
+              <div class="col-2">
+                <div class="d-flex justify-content-center align-items-center rounded-circle mensagens_item-iconeMensagem">
+                  <svg aria-hidden="true" class="icone icone-md icone-notificacao">
+
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mail-carta-envelope-mensagem"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="col-10">
+                Título da notificação.
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-pane fade" id="mensagens" ng-class="{'show active' : notificacoes.tab === 'mensagens'}" role="tabpanel">
+      <div class="d-flex align-items-center mensagem_aviso">
+        <div class="pl-3">
+          Você tem 2 mensagens
+        </div>
+      </div>
+      <ul class="mensagens list-unstyled">
+        <li>
+          <a class="navegacao-link" href="">
+            <div class="row no-gutters align-items-center pl-3 mensagens_item">
+              <div class="col-2">
+                <div class="d-flex justify-content-center align-items-center rounded-circle mensagens_item-iconeMensagem">
+                  <svg aria-hidden="true" class="icone icone-md icone-notificacao">
+
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mail-carta-envelope-mensagem"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="col-10">
+                Título da mensagem.
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="navegacao-link" href="">
+            <div class="row no-gutters align-items-center pl-3 mensagens_item">
+              <div class="col-2">
+                <div class="d-flex justify-content-center align-items-center rounded-circle mensagens_item-iconeMensagem">
+                  <svg aria-hidden="true" class="icone icone-md icone-notificacao">
+
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mail-carta-envelope-mensagem"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="col-10">
+                Título da mensagem.
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+@import '../../../css/_utilidades/utilidades';
+
+.sidebar {
+  background: $backgroudSideBar;
+  display: inline-block;
+  overflow: hidden;
+  @include transition(width .15s linear);
+  width: pxToRem(270);
+  z-index: 99;
+}
+
+.sidebar-fechado {
+  width: pxToRem(55);
+}
+%menuLink {
+  border-bottom: pxToRem(1) solid #eee;
+  border-left: solid pxToRem(4) transparent;
+  color: #676767;
+  cursor: pointer;
+  padding: pxToRem(12) pxToRem(10) pxToRem(12) pxToRem(12);
+  width: pxToRem(270);
+
+  &:hover {
+    @include transition(color .15s linear);
+    @extend %menuLinkAtivo;
+  }
+}
+
+%menuLinkAtivo {
+  background-color: #fff;
+  border-left: solid pxToRem(4) $corSombra;
+  color: $corSombra;
+  fill: $corSombra;
+}
+
+.menuPrincipal {
+  position:fixed;
+  @include transition(width .15s linear);
+  display: inline-block;
+  overflow: hidden;
+  width: pxToRem(270);
+  z-index:100;
+}
+
+.menuPrincipal-fechado {
+  width: pxToRem(52);
+  position:fixed;
+  overflow:hidden;
+  @include transition(width .15s linear);
+}
+
+.menuPrincipal .nav-link {
+  @extend %menuLink;
+
+  .icone {
+    margin-right: pxToRem(13);
+  }
+}
+
+.menuPrincipal .navLink-ativo {
+  @extend %menuLinkAtivo
+}

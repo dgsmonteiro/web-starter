@@ -1,0 +1,73 @@
+.icone {
+  transition: transform .2s linear, fill .2s linear;
+
+  &-xsm {
+    height: pxToRem(12);
+    width: pxToRem(12);
+  }
+
+  &-sm {
+    height: pxToRem(16);
+  	width: pxToRem(16);
+  }
+
+  &-md {
+    height: pxToRem(24);
+  	width: pxToRem(24);
+  }
+
+  &-lg {
+    height: pxToRem(32);
+  	width: pxToRem(32);
+  }
+
+  &-xl {
+    height: pxToRem(48);
+  	width: pxToRem(48);
+  }
+}
+
+.icone-header {
+  fill: $iconeHeader;
+}
+
+.icone-sidebar-header {
+  fill: $backgroundBody;
+
+  &:hover {
+    fill: $corSombra;
+  }
+}
+
+.icone-sidebar {
+  fill: $eixoAtivo;
+
+  &:hover {
+    fill: $corSombra;
+  }
+}
+
+.icone-box {
+  fill: $corSombra;
+}
+
+.icone-pesquisa {
+  fill: $perfilUsuario;
+
+  &:hover {
+    fill: $perfilUsuario;
+  }
+}
+
+.icone-notificacao {
+  fill: $backgroundBody;
+}
+
+//logo da GISS no header
+.logo {
+  height: pxToRem(32);
+  width: pxToRem(185);
+
+  &_icon {}
+  &_text {}
+}

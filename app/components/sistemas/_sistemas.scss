@@ -1,0 +1,104 @@
+.dropdown-circular {
+  cursor: pointer;
+
+  .dropdown-toggle {
+    border-radius: 50%;
+  }
+
+  & .dropdown-toggle:after {
+    display: none;
+  }
+}
+.dropdown-circular:hover .dropdown-toggle,
+.dropdown-circular.show .dropdown-toggle{
+  background-color: $eixoAtivo;
+
+  & .icone {
+    fill: $backgroundBody;
+  }
+}
+
+.dropdown-circular .dropdown-menu {
+  border-radius:0;
+  box-shadow: 0 pxToRem(4) pxToRem(20) rgba($corSombra, .4);
+  width: pxToRem(300);
+}
+
+.dropdown-circular .dropdown-menu_titulo,
+.dropdown-circular .dropdown-menu_rodape .btn-block {
+  border-radius: 0;
+  color: $eixoAtivo;
+}
+.dropdown-circular .dropdown-menu_titulo {
+  border-bottom: solid 1px $bordaSessaoFormularios;
+
+  .icone-padraoPlano {
+    fill: $eixoAtivo;
+  }
+}
+.dropdown-circular .dropdown-menu_rodape {
+  border-top: solid 1px $bordaSessaoFormularios;
+}
+.dropdown-circular .dropdown-menu_titulo:hover,
+.dropdown-circular .dropdown-menu_rodape .btn-block:hover {
+    background-color: $eixoAtivo;
+    color: $backgroundBody;
+
+    .icone-padraoPlano {
+      fill: $backgroundBody;
+    }
+}
+
+.dropdown-circular .listaDeBotoes {}
+.dropdown-circular .listaDeBotoes .listaDeBotoes_item {
+  border: solid 1px transparent;
+}
+.dropdown-circular .listaDeBotoes .listaDeBotoes_botao {
+  color: $corSombra;
+
+  .icone-padraoPlano {
+    fill: $corSombra;
+  }
+}
+.dropdown-circular .listaDeBotoes .listaDeBotoes_item:hover {
+  border: solid 1px $bordaSessaoFormularios;
+  border-radius: pxToRem(5);
+
+  .listaDeBotoes_botao,
+  .icone-padraoPlano {
+    color: $eixoInativoHover;
+    fill: $eixoInativoHover;;
+    text-decoration: none;
+  }
+}
+
+
+.navegacao_link:hover {
+  text-decoration: none;
+}
+
+.navegacao_sistemas-titulo {
+  background: #fbfbfb;
+  border-bottom: 1px solid #dcdcdc;
+  color: $eixoAtivo;
+  padding: pxToRem(10) pxToRem(0);
+
+  &:hover {
+    background: $eixoAtivo;
+    color: $backgroundBody;
+    text-decoration: none;
+  }
+}
+
+.navegacao_sistemas-conteudo {
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid white;
+  color: $eixoAtivo;
+  font-weight: 500;
+
+  &:hover {
+    border: 1px solid #dcdcdc;
+    color: $eixoInativoHover;
+  }
+}

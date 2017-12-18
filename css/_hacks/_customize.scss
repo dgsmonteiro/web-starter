@@ -1,0 +1,77 @@
+@import '../_utilidades/_utilidades';
+
+$custom-file-text: (
+  placeholder: (
+    pt-br: "Selecionar arquivo...",
+    pt: "Selecionar arquivo..."
+  ),
+
+  button-label: (
+    pt-br: "Navegar",
+    pt: "Navegar"
+  )
+);
+
+.angucomplete-dropdown {
+  overflow-y: auto;
+  max-height: pxToRem(200);
+}
+
+.d-flex-margin {
+  margin-right: pxToRem(-15);
+  margin-left: pxToRem(-15);
+}
+
+.invalid-feedback {
+  font-size: pxToRem(12);
+}
+.modal-lg {
+  max-width: 70%;
+}
+.ng-invalid-autocomplete-required.ng-touched {
+  border-color: #dc3545;
+}
+.angucomplete-dropdown {
+  width: auto;
+}
+
+
+//TESTE joyride
+.jr_container {
+  padding: pxToRem(10);
+}
+.jr_container .jr_title {
+  color: #000;
+}
+.jr_container .jr_content {
+  color: #999;
+}
+.jr_container .jr_button {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
+.jr_container .jr_button.jr_skip {
+  color: #fff;
+  background-color: #868e96;
+  border-color: #868e96;
+}
+.jr_container .jr_button.jr_skip:hover {
+  color: #fff;
+  background-color: #727b84;
+  border-color: #6c757d;
+}
+.jr_container .jr_button.jr_prev,
+.jr_container .jr_button.jr_next {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.jr_container .jr_button.jr_prev:hover,
+.jr_container .jr_button.jr_next:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+

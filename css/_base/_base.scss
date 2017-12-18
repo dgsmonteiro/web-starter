@@ -1,0 +1,94 @@
+@import '../_utilidades/_utilidades';
+
+//importação direta do do google fontes
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i');
+
+//renderização máxima de viewport para IE/EDGE em MOBILE/TABLETS
+@-ms-viewport {
+  max-width: 100% !important;
+  width: auto !important;
+}
+
+html {
+  font: 16px normal;
+  @media (max-width: 1280px) {
+    font: 14px normal;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+// Light reset
+html,
+body,
+blockquote,
+figure,
+form {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  //regra para esconder Sprite SVG
+  > svg {
+    &:first-child {
+      display: none;
+    }
+  }
+}
+// Remove unwanted borders
+form,
+fieldset {
+  border: none;
+}
+// Consistency between browsers
+abbr {
+  cursor: help;
+  border-bottom: .063rem dotted #bbb;
+}
+
+svg:not(:root) {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: pxToRem(20);
+  margin: 0;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+a {
+  &:not([class]) {
+    text-decoration: underline;
+  }
+  &[class="ng-binding"],a:not([class]) {
+    text-decoration: underline;
+  }
+  &:visited {}
+}
+
+p {
+  margin-bottom: 0;
+}
